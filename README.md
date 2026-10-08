@@ -1,19 +1,19 @@
-# [Nome da solução]
+# [Guia de Entendimento do Cliente Bulbe]
 
 > Projeto em Ciência de Dados I · Ibmec BH · 2º semestre de 2026
-> Cliente: **Bulbe Energia** · Turma **[A/B]** · Squad **[XX]**
+> Cliente: **Bulbe Energia** · Turma **[A]** · Squad **[02]**
 
-[Uma frase que resume a solução: o que ela faz e para quem. Exemplo: "Painel que acompanha o cliente novo da Bulbe da adesão ao pagamento da primeira fatura."]
+[Guia explicativo, em linguagem simples sobre como funciona a Bulbe e de onde vem o desconto ao cliente novo, da adesão ao pagamento da primeira fatura.]
 
 ---
 
 ## 1. Problema
 
-[Qual parte da dor da Bulbe o squad escolheu atacar e por quê. Use pelo menos um dado da apresentação da Bulbe como evidência.]
+[O problema escolhido pelo grupo foi o de falta de entendimento do produto, aonde 27,7% do churn é por conta deste problema.]
 
-- **Dor escolhida:** [ex.: clientes que não recebem ou não entendem a 1ª fatura]
-- **Evidência:** [ex.: cerca de 20% de falha na entrega de mensagens de WhatsApp]
-- **Indicador que a solução pretende mover:** [pagamento da 1ª fatura | churn do 1º mês | entregabilidade das comunicações]
+- **Dor escolhida:** [Clientes não entendem como o produto funciona e o que é energia solar]
+- **Evidência:** [27,7% do churn é por não compreensão  do produto]
+- **Indicador que a solução pretende mover:** [Melhora da compreensão do produto na parte do usuário | melhora no churn | melhora na comunicação com o cliente antes e depois da adesão]
 
 ## 2. Persona e jornada
 
@@ -25,7 +25,7 @@
 [Descrição curta da solução e das principais telas.]
 
 | Tela | O que faz | História relacionada |
-| --- | --- | --- |
+| ---    | --- | --- |
 | [Início] | [ ] | [HU01] |
 | [ ] | [ ] | [ ] |
 
@@ -67,7 +67,7 @@
 
 ## 7. Quadro do projeto
 
-- **GitHub Projects:** [link para o quadro do squad]
+- **GitHub Projects:** [https://github.com/Joao-R-web/202602-projeto1-a-grupo02]
 
 ## 8. Equipe
 
