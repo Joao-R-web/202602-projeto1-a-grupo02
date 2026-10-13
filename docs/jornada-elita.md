@@ -17,8 +17,8 @@ Canais que usa: WhatsApp, Google, e-mail e aplicativo da Bulbe
 
 | Fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
 | --- | --- | --- | --- | --- | --- | --- |
-| [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Contratação e configuração dos dados | A Maria contrata pelo site e confirma os dados | Site, e-mail, aplicativo ou WhatsApp | "Fiz tudo certo? | Expectativa e insegurança | Não sabe quais são as próximas etapas | Mostrar as etaps do proceso e disponibilizar a confimação de cada etapa. |
 
 ## Oportunidades registradas como Issues
 
-- [ ] #[número] [título da oportunidade]
+- [ ] #10 Mostar as etapas do processo e disponibilizar a confirmação de cada  etapa.
