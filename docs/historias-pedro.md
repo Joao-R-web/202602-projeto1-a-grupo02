@@ -4,7 +4,7 @@
 
 | ID | História | Oportunidade de origem | Prioridade | Issue |
 | --- | --- | --- | --- | --- |
-| HU01 | Como cliente da Bulbe que vai mudar de endereço, quero saber o que acontece com meu contrato e pedir a transferência para o novo endereço, para continuar economizando sem cancelar. | #12 Explicar e facilitar a mudança de endereço sem cancelar o contrato | Alta | #[ ] |
+| HU01 | Como cliente da Bulbe que vai mudar de endereço, quero saber o que acontece com meu contrato e pedir a transferência para o novo endereço, para continuar economizando sem cancelar. | #12 Explicar e facilitar a mudança de endereço sem cancelar o contrato | Alta | #13 |
 
 ## Critérios de aceite
 
