@@ -1,6 +1,6 @@
 # Mapa de jornada do usuário
 
-> Entregável da aula 19. Substitua os textos entre colchetes.
+
 
 ## Persona
 
