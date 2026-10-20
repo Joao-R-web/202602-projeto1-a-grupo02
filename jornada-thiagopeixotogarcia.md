@@ -12,7 +12,7 @@
 
 ## Mapa
 
-![Mapa de jornada](wireframes/jornada.png)
+![Mapa de jornada](docs/wireframes/jornada-thiagopeixotogarcia.png)
 
 | Fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
 | --- | --- | --- | --- | --- | --- | --- |
