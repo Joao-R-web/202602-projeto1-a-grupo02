@@ -19,12 +19,12 @@ Risco de cancelamento por frustração: Por achar que o modelo é uma "pegadinha
 
 ![Mapa de jornada](wireframes/jornada.png)
 
-|| Fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
+| fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1. Descoberta e Adesão | Visualiza anúncio no Instagram e contrata a Bulbe direto pelo celular sozinho. | Instagram, Landing Page da Bulbe | "Legal, vou pagar mais barato na luz sem burocracia." | Ansioso / Otimista | Nenhuma nesta fase (promessa inicial atrativa). | Simplificar o onboarding com uma mensagem de boas-vindas educativa. |
-| 2. Recebimento das Faturas | Recebe a fatura mínima da Cemig e a fatura da Bulbe em paralelo no e-mail/WhatsApp. | E-mail, Aplicativos bancários, WhatsApp | "Espera, por que a Cemig ainda está a cobrar se eu mudei para a Bulbe? Estou a pagar em duplicado!" | Confuso / Frustrado | Acha que há cobrança dupla ao receber a conta da Cemig e da Bulbe juntas. | Criar um guia visual rápido explicando o papel da distribuidora (Cemig) vs geradora (Bulbe)[cite: 7]. |
-| 3. Análise de Créditos | Tenta ler o demonstrativo de consumo e créditos de energia injetada. | Fatura em PDF | "Não entendo nada desses termos técnicos de energia injetada/compensada, isso parece pegadinha." | Irritado / Desconfiado | Incompreensão total do sistema de créditos e cálculo de desconto[cite: 7]. | Traduzir termos técnicos para uma linguagem simples e visual (ex: "Créditos de economia")[cite: 7]. |
-| 4. Decisão e Risco | Decide ignorar a cobrança da Bulbe por achar que foi enganado e pensa em cancelar. | Fatura pendente, E-mail | "Vou deixar de pagar isso e cancelar antes que saia mais caro." | Raiva / Desistência | Risco de inadimplência e cancelamento por frustração e falta de clareza[cite: 7]. | Enviar alerta amigável por WhatsApp com resumo do valor poupado e botão de ajuda rápida[cite: 7]. |
+| 2. Recebimento das Faturas | Recebe a fatura mínima da Cemig e a fatura da Bulbe em paralelo no e-mail/WhatsApp. | E-mail, Aplicativos bancários, WhatsApp | "Espera, por que a Cemig ainda está a cobrar se eu mudei para a Bulbe? Estou a pagar em duplicado!" | Confuso / Frustrado | Acha que há cobrança dupla ao receber a conta da Cemig e da Bulbe juntas. | Criar um guia visual rápido explicando o papel da distribuidora (Cemig) vs geradora (Bulbe). |
+| 3. Análise de Créditos | Tenta ler o demonstrativo de consumo e créditos de energia injetada. | Fatura em PDF | "Não entendo nada desses termos técnicos de energia injetada/compensada, isso parece pegadinha." | Irritado / Desconfiado | Incompreensão total do sistema de créditos e cálculo de desconto. | Traduzir termos técnicos para uma linguagem simples e visual (ex: "Créditos de economia"). |
+| 4. Decisão e Risco | Decide ignorar a cobrança da Bulbe por achar que foi enganado e pensa em cancelar. | Fatura pendente, E-mail | "Vou deixar de pagar isso e cancelar antes que saia mais caro." | Raiva / Desistência | Risco de inadimplência e cancelamento por frustração e falta de clareza. | Enviar alerta amigável por WhatsApp com resumo do valor poupado e botão de ajuda rápida. |
 
 ## Oportunidades registradas como Issues
 
