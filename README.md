@@ -9,7 +9,7 @@
 
 ## 1. Problema
 
-[O problema escolhido pelo grupo foi o de falta de entendimento do produto, aonde 27,7% do churn é por conta deste problema.]
+[O problema escolhido pelo grupo foi o de falta de entendimento do produto e da onde vem o desconto, aonde 27,7% do churn é por conta deste problema.]
 
 - **Dor escolhida:** [Clientes não entendem como o produto funciona e o que é energia solar]
 - **Evidência:** [27,7% do churn é por não compreensão  do produto]
@@ -17,7 +17,8 @@
 
 ## 2. Persona e jornada
 
-- **Persona:** [nome fictício, idade, contexto em uma linha]
+- **Persona 1:** [Rosana Ferreira, 49 anos, secretária escolar de Contagem (MG), cuida das contas da casa; aderiu à Bulbe sem saber em que etapa estava e, ao receber o boleto junto com a conta menor da Cemig, achou que era cobrança duplicada ou golpe.]
+- **Persona 2:** [Fernanda Lopes, 42 anos, MEI e dona de uma confeitaria em Contagem (MG), com conta de luz acima de R$ 400; esperava R$ 40 a R$ 50 de desconto, recebeu R$ 29,95 e depois R$ 0,17 sem explicação, e descobriu fidelidade de 24 meses com multa.]
 - **Mapa de jornada:** [docs/jornada.md](docs/jornada.md)
 
 ## 3. Solução
@@ -26,9 +27,18 @@
 
 | Tela | O que faz | História relacionada |
 | ---    | --- | --- |
-| [Início] | [ ] | [HU01] |
-| [ ] | [ ] | [ ] |
-
+| Como funciona a Bulbe? | Explica de onde vem o desconto e como a energia é produzida nas usinas solares, com ilustração e linguagem simples | HU01 |
+| Quem pode ser cliente | Primeira etapa do fluxo de 3 passos: lista os requisitos para contratar e destaca a oferta de desconto | HU01 |
+| Como funciona o desconto | Segunda etapa: compara visualmente quanto o cliente paga com e sem a Bulbe | HU01 |
+| Economia estimada | Terceira etapa: mostra o percentual de economia estimado para o cliente | HU01 |
+| Como o desconto é calculado | Texto explicando a conta do desconto, em tela cheia | HU02 |
+| Acompanhe as etapas | Linha do tempo: adesão concluída, aguardar contato, continuar pagando a Cemig, fatura da Bulbe disponível, pagar a Bulbe, rastrear o pagamento e pagamento realizado | HU01 |
+| Entendendo suas faturas | Explica a fatura da Cemig e a fatura da Bulbe e responde "por que ainda recebo a fatura da Cemig?", com botão "Entenda a cobrança" | HU01 |
+| Seu resumo do mês | Mostra quanto o cliente economizou no mês, os créditos gerados e a composição da conta, com acesso às faturas detalhadas | HU01 |
+| Fatura por WhatsApp | Mensagem com o resumo da fatura e a chave Pix para copiar e pagar | HU01 |
+| Informe seus dados e veja como fica a conta | Formulário de dados, comparação de como a conta de luz fica e mensagem de WhatsApp com o boleto | HU01 |
+| Perguntas frequentes | Respostas em sanfona sobre a Bulbe | HU01 |
+| Mudei de endereço, como faço? | Explica como funciona a mudança, com botões "Pedir transferência" e "Falar no WhatsApp" | HU02 |
 - **Histórias de usuário:** [docs/historias.md](docs/historias.md)
 - **Wireframes:** [docs/wireframes/](docs/wireframes/)
 
