@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Veja como fica a conta · Bulbe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body data-tela="conta">
+
+  <div class="app app--adesao">
+
+    <header class="cabecalho">
+
+      <div class="barra-status">
+        <span>10:12</span>
+        <div class="status-icones">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true">
+            <rect x="0" y="8" width="3" height="4" rx="1"/>
+            <rect x="5" y="5" width="3" height="7" rx="1"/>
+            <rect x="10" y="2.5" width="3" height="9.5" rx="1"/>
+            <rect x="15" y="0" width="3" height="12" rx="1"/>
+          </svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none" aria-hidden="true">
+            <rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor"/>
+            <rect x="2.5" y="2.5" width="16" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="22" y="4" width="2" height="4" rx="1" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="barra-topo">
+        <a class="botao-icone" href="index.html" aria-label="Voltar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </a>
+        <img class="logo-img" src="img/logo-bulbe-branca.png" alt="Bulbe" width="100" height="29">
+        <span class="etapa" aria-label="Etapa 2 de 3">2/3</span>
+      </div>
+
+      <div class="progresso" role="progressbar" aria-label="Progresso do cadastro" aria-valuemin="0" aria-valuemax="3" aria-valuenow="2">
+        <div class="progresso__barra" style="width: 66%"></div>
+      </div>
+
+    </header>
+
+    <main class="conteudo" id="conteudo">
+
+      <div>
+        <h1 class="titulo" id="titulo-conta">Veja como fica a conta de luz do titular</h1>
+        <p class="subtitulo">Valores de exemplo</p>
+      </div>
+
+      <!-- Uma fatura que vira duas. Alturas proporcionais aos valores (calculadas no app.js). -->
+      <section class="ilustra" aria-labelledby="titulo-ilustra">
+        <h2 class="sr-only" id="titulo-ilustra">Antes e agora</h2>
+        <p class="sr-only">Antes, uma fatura de R$ 281,93 da Cemig. Agora, duas faturas: Bulbe, R$ 199,87, e Cemig, R$ 52,06. Total de R$ 251,93 e economia de R$ 30,00 por mês.</p>
+
+        <div class="ilustra__grade" aria-hidden="true">
+
+          <div class="coluna">
+            <div class="fatura fatura--antes" data-altura="antes">
+              <span class="fatura__rotulo">Fatura</span>
+              <span class="fatura__empresa">Cemig</span>
+              <svg class="raio" width="34" height="34" viewBox="0 0 24 24" fill="#8A9BB5"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+              <span class="codigo"></span>
+            </div>
+            <div class="legenda-col legenda-col--antes"><span>Antes · <em>1 fatura</em></span><strong data-valor="antes">R$ 281,93</strong></div>
+          </div>
+
+          <svg class="seta" width="52" height="230" viewBox="0 0 52 230" fill="none" stroke="#8A9BB5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 115h12"/>
+            <path d="M14 115c16 0 14-35 32-35"/>
+            <path d="M14 115c16 0 14 89 32 89"/>
+            <path d="M41 75l6 5-6 5"/>
+            <path d="M41 199l6 5-6 5"/>
+          </svg>
+
+          <div class="coluna">
+            <div class="pilha">
+              <div class="economia-pedaco" data-altura="economia">− <span data-valor="economia">R$ 30,00</span></div>
+              <div class="fatura fatura--bulbe" data-altura="bulbe">
+                <span class="fatura__rotulo">Fatura</span>
+                <img class="fatura__logo" src="img/logo-bulbe-branca.png" alt="" width="64" height="19">
+                <svg class="sol" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5B700" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5" fill="#F5B700"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+                <span class="fatura__valor" data-valor="bulbe">R$ 199,87</span>
+                <span class="codigo"></span>
+              </div>
+              <div class="fatura fatura--cemig" data-altura="cemig">
+                <span class="fatura__rotulo">Fatura</span>
+                <span class="fatura__linha">Cemig · <b data-valor="cemig">R$ 52,06</b></span>
+              </div>
+            </div>
+            <div class="legenda-col"><span>Agora · <em>2 faturas</em></span><strong data-valor="total">R$ 251,93</strong></div>
+          </div>
+
+        </div>
+
+        <p class="resultado">Economia de <strong data-valor="economia">R$ 30,00</strong> por mês</p>
+      </section>
+
+      <section class="card-titular" id="alerta-titular" aria-labelledby="titulo-alerta">
+        <h2 id="titulo-alerta">Avise o titular antes de continuar</h2>
+        <p>Ele vai receber duas contas. Avise para ele não estranhar a cobrança da Bulbe.</p>
+        <a class="botao botao--whatsapp-suave" href="mensagem.html">
+          <img src="img/icone-whatsapp.png" alt="" width="20" height="20">
+          Mostrar ao titular pelo WhatsApp
+        </a>
+      </section>
+
+    </main>
+
+    <footer class="rodape rodape--acao">
+      <!-- TODO: apontar para a próxima etapa do fluxo de adesão da Bulbe -->
+      <a class="botao botao--primario" href="#">Continuar</a>
+    </footer>
+
+  </div>
+
+  <script>
+    function ajustarAltura() {
+      document.documentElement.style.setProperty("--altura-app", window.innerHeight + "px");
+    }
+
+    ajustarAltura();
+    window.addEventListener("resize", ajustarAltura);
+    window.addEventListener("orientationchange", ajustarAltura);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Informe seus dados · Bulbe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body data-tela="dados">
+
+  <div class="app app--adesao">
+
+    <header class="cabecalho">
+
+      <div class="barra-status">
+        <span>10:12</span>
+        <div class="status-icones">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true">
+            <rect x="0" y="8" width="3" height="4" rx="1"/>
+            <rect x="5" y="5" width="3" height="7" rx="1"/>
+            <rect x="10" y="2.5" width="3" height="9.5" rx="1"/>
+            <rect x="15" y="0" width="3" height="12" rx="1"/>
+          </svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none" aria-hidden="true">
+            <rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor"/>
+            <rect x="2.5" y="2.5" width="16" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="22" y="4" width="2" height="4" rx="1" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="barra-topo">
+        <button type="button" class="botao-icone" aria-label="Voltar" onclick="history.back()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <img class="logo-img" src="img/logo-bulbe-branca.png" alt="Bulbe" width="100" height="29">
+        <span class="etapa" aria-label="Etapa 1 de 3">1/3</span>
+      </div>
+
+      <div class="progresso" role="progressbar" aria-label="Progresso do cadastro" aria-valuemin="0" aria-valuemax="3" aria-valuenow="1">
+        <div class="progresso__barra" style="width: 33%"></div>
+      </div>
+
+    </header>
+
+    <main class="conteudo" id="conteudo">
+      <form id="form-dados" novalidate style="display: flex; flex-direction: column; gap: 16px">
+
+        <div>
+          <h1 class="titulo">Informe seus dados</h1>
+          <p class="subtitulo">Em caso de dúvidas, <a href="#">clique aqui</a>.</p>
+        </div>
+
+        <fieldset>
+          <legend>Para quem é este cadastro? <span class="obrigatorio" aria-hidden="true">*</span></legend>
+          <div class="segmentado">
+            <input type="radio" id="para-mim" name="para-quem" value="mim">
+            <label for="para-mim">
+              <svg class="icone-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              Para mim
+            </label>
+            <input type="radio" id="para-outra" name="para-quem" value="outra" checked>
+            <label for="para-outra">
+              <svg class="icone-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              Para outra pessoa
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset id="grupo-titular">
+          <legend class="legenda-marcada">Dados do titular da conta de luz</legend>
+          <div class="campo">
+            <label for="titular-nome">Nome completo do titular <span class="obrigatorio">*</span></label>
+            <input type="text" id="titular-nome" autocomplete="off" placeholder="Nome do titular da conta" required aria-describedby="titular-nome-erro">
+            <p class="campo__erro" id="titular-nome-erro" hidden>Informe o nome completo do titular.</p>
+          </div>
+          <div class="campo campo--whatsapp">
+            <label for="titular-whats">WhatsApp do titular <span class="obrigatorio">*</span></label>
+            <img class="campo__icone" src="img/icone-whatsapp.png" alt="" width="20" height="20">
+            <input type="tel" id="titular-whats" inputmode="numeric" placeholder="(00) 00000-0000" required aria-describedby="titular-whats-erro">
+            <p class="campo__erro" id="titular-whats-erro" hidden>Informe um WhatsApp com DDD, 11 números.</p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend class="legenda-marcada" id="titulo-seus-dados">Seus dados</legend>
+          <div class="campo">
+            <label for="seu-nome">Seu nome <span class="obrigatorio">*</span></label>
+            <input type="text" id="seu-nome" autocomplete="name" placeholder="Nome de quem está cadastrando" required aria-describedby="seu-nome-erro">
+            <p class="campo__erro" id="seu-nome-erro" hidden>Informe o seu nome.</p>
+          </div>
+          <div class="campo campo--whatsapp">
+            <label for="seu-whats">Seu WhatsApp <span class="obrigatorio">*</span></label>
+            <img class="campo__icone" src="img/icone-whatsapp.png" alt="" width="20" height="20">
+            <input type="tel" id="seu-whats" inputmode="numeric" autocomplete="tel-national" placeholder="(00) 00000-0000" required aria-describedby="seu-whats-erro">
+            <p class="campo__erro" id="seu-whats-erro" hidden>Informe um WhatsApp com DDD, 11 números.</p>
+          </div>
+        </fieldset>
+
+        <div class="aviso" id="aviso-familiar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <p>Você vai acompanhar a conta do titular pelo app e receber os avisos de fatura junto com ele(a).</p>
+        </div>
+
+        <p class="termos">Ao submeter minhas respostas e clicar em “Próximo”, concordo com a <a href="#">Política de Privacidade</a> da Bulbe Energia.</p>
+
+      </form>
+    </main>
+
+    <!-- Na adesão, o rodapé do template guarda o botão da etapa no lugar das abas do app -->
+    <footer class="rodape rodape--acao">
+      <button type="submit" form="form-dados" id="botao-proximo" class="botao botao--primario" disabled>Próximo</button>
+    </footer>
+
+  </div>
+
+  <script>
+    function ajustarAltura() {
+      document.documentElement.style.setProperty("--altura-app", window.innerHeight + "px");
+    }
+
+    ajustarAltura();
+    window.addEventListener("resize", ajustarAltura);
+    window.addEventListener("orientationchange", ajustarAltura);
+  </script>
+
+</body>
+</html>
