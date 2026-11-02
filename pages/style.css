@@ -1,0 +1,486 @@
+  /* ========================================
+   RESET E VARIÁVEIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul-bulbe: #08068D;
+    --azul-claro: #7889ad;
+    --azul-fundo: #eef2ff;
+    --borda: #e1e5ef;
+    --texto-suave: #515e76;
+    --verde: #159447;
+    --verde-linha: #bce4ca;
+    --fundo-pagina: #ececec;
+    --altura-app: 100dvh;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: var(--altura-app);
+    background-color: var(--fundo-pagina);
+    font-family: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--azul-bulbe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========================================
+   APLICATIVO
+======================================== */
+
+.app {
+    width: min(390px, 100vw);
+    height: min(812px, 96vh);
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (pointer: coarse), (max-width: 600px) {
+    body {
+        display: block;
+        background-color: #ffffff;
+    }
+
+    .app {
+        width: 100%;
+        height: var(--altura-app);
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho {
+    flex: 0 0 auto;
+    padding: calc(env(safe-area-inset-top) + 4px) 16px 16px;
+    background-color: var(--azul-bulbe);
+    color: #ffffff;
+}
+
+.barra-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding: 0 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.status-icones {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.barra-topo {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 48px;
+    margin: 8px 0 4px;
+}
+
+.botao-icone {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.logo img {
+    display: block;
+    width: 105px;
+    max-height: 38px;
+    object-fit: contain;
+}
+
+.acoes-direita {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.indicador {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    border-radius: 10px;
+    background-color: #e53935;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: var(--azul-bulbe);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* ========================================
+   CONTEÚDO
+======================================== */
+
+.conteudo {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 24px 18px 20px;
+    background-color: #ffffff;
+    scrollbar-width: thin;
+    scrollbar-color: #a2b3d5 transparent;
+}
+
+.introducao {
+    margin-bottom: 28px;
+}
+
+.introducao h2 {
+    margin-bottom: 8px;
+    color: var(--azul-bulbe);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.introducao p {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ========================================
+   ETAPAS E LINHA VERTICAL
+======================================== */
+
+.etapas-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+   Cada etapa mantém sua posição natural.
+   A linha é desenhada em relação ao círculo,
+   sem depender do espaçamento do texto.
+*/
+
+.etapa-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 4px 0 25px;
+}
+
+/* Linha de conexão entre os círculos */
+
+.etapa-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 13px;
+    top: 32px;
+    bottom: -1px;
+    width: 2px;
+    background-color: var(--borda);
+}
+
+/* Linha das etapas concluídas */
+
+.etapa-item.concluido:not(:last-child)::after {
+    background-color: var(--verde-linha);
+}
+
+/* Círculos das etapas */
+
+.etapa-icone {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+/* Etapa concluída */
+
+.etapa-item.concluido .etapa-icone {
+    background-color: var(--verde);
+    color: #ffffff;
+}
+
+/* Etapa atual
+   O destaque fica no fundo, sem deslocar o círculo
+   nem interferir na linha vertical.
+*/
+
+.etapa-item.andamento {
+    margin: 0 -8px 16px;
+    padding: 14px 10px;
+    border-radius: 12px;
+    background-color: var(--azul-fundo);
+}
+
+/* Compensa o espaçamento extra da etapa atual
+   para manter a linha alinhada ao centro do círculo. */
+
+.etapa-item.andamento:not(:last-child)::after {
+    left: 21px;
+    top: 42px;
+    bottom: -17px;
+}
+
+.etapa-item.andamento .etapa-icone {
+    background-color: var(--azul-bulbe);
+    color: #ffffff;
+    outline: 3px solid #dce5ff;
+    outline-offset: 2px;
+}
+
+/* Etapa futura */
+
+.etapa-item.pendente .etapa-icone {
+    background-color: #e9edf5;
+    color: #647493;
+}
+
+/* Textos */
+
+.etapa-texto {
+    flex: 1;
+    min-width: 0;
+    padding-top: 2px;
+}
+
+.etapa-texto h3 {
+    color: var(--azul-bulbe);
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.45;
+    overflow-wrap: break-word;
+}
+
+.etapa-texto p {
+    margin-top: 5px;
+    color: var(--texto-suave);
+    font-size: 0.82rem;
+    line-height: 1.55;
+    overflow-wrap: break-word;
+}
+
+.etapa-item.pendente .etapa-texto h3 {
+    color: #647493;
+}
+
+.etapa-item.pendente .etapa-texto p {
+    color: #596579;
+}
+
+/* ========================================
+   AVISO INFORMATIVO
+======================================== */
+
+.aviso-fatura {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    padding: 16px;
+    background-color: #eef2ff;
+    border: 1px solid #dce4ff;
+    border-radius: 14px;
+}
+
+.icone-fatura {
+    flex-shrink: 0;
+    color: var(--azul-bulbe);
+}
+
+.texto-aviso {
+    flex: 1;
+    min-width: 0;
+}
+
+.texto-aviso h3 {
+    margin-bottom: 5px;
+    color: var(--azul-bulbe);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.texto-aviso p {
+    color: var(--texto-suave);
+    font-size: 0.82rem;
+    line-height: 1.55;
+}
+
+/* ========================================
+   BOTÃO PRINCIPAL
+======================================== */
+
+.btn-continuar {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin-bottom: 12px;
+    padding: 13px 16px;
+    background-color: var(--azul-bulbe);
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-continuar:active {
+    transform: scale(0.98);
+}
+
+/* ========================================
+   RODAPÉ E NAVEGAÇÃO
+======================================== */
+
+.rodape {
+    flex: 0 0 auto;
+    background-color: #ffffff;
+    border-top: 1px solid var(--borda);
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 6px calc(10px + env(safe-area-inset-bottom));
+}
+
+.nav-item {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 4px 0;
+    background: transparent;
+    border: none;
+    color: #71809f;
+    font-family: inherit;
+    font-size: 0.73rem;
+    cursor: pointer;
+}
+
+.nav-item.ativo {
+    color: var(--azul-bulbe);
+    font-weight: 700;
+}
+
+/* ========================================
+   CARREGAMENTO E ERROS
+======================================== */
+
+.carregando,
+.erro {
+    padding: 20px 0;
+    color: var(--texto-suave);
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+/* ========================================
+   TELAS PEQUENAS
+======================================== */
+
+@media (max-width: 360px) {
+    .conteudo {
+        padding: 18px 14px;
+    }
+
+    .introducao h2 {
+        font-size: 1.18rem;
+    }
+
+    .etapa-item {
+        gap: 10px;
+    }
+
+    .etapa-texto h3 {
+        font-size: 0.84rem;
+    }
+
+    .etapa-texto p {
+        font-size: 0.75rem;
+    }
+
+    .aviso-fatura {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .logo img {
+        width: 88px;
+    }
+}
