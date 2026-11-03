@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mudei de endereço · Bulbe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body data-tela="mudanca">
+
+  <div class="app app--adesao">
+
+    <header class="cabecalho">
+
+      <div class="barra-status">
+        <span>10:12</span>
+        <div class="status-icones">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true">
+            <rect x="0" y="8" width="3" height="4" rx="1"/>
+            <rect x="5" y="5" width="3" height="7" rx="1"/>
+            <rect x="10" y="2.5" width="3" height="9.5" rx="1"/>
+            <rect x="15" y="0" width="3" height="12" rx="1"/>
+          </svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none" aria-hidden="true">
+            <rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor"/>
+            <rect x="2.5" y="2.5" width="16" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="22" y="4" width="2" height="4" rx="1" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="barra-topo">
+        <a class="botao-icone" href="index.html" aria-label="Voltar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </a>
+        <img class="logo-img" src="img/logo-bulbe-branca.png" alt="Bulbe" width="100" height="29">
+        <span></span>
+      </div>
+
+    </header>
+
+    <main class="conteudo" id="conteudo">
+
+      <h1 class="titulo">Mudei de endereço, como faço?</h1>
+
+      <p class="resposta-destaque">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="11" fill="#23C97B"/>
+          <path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Mudar de endereço não cancela o seu contrato.
+      </p>
+
+      <p class="texto-apoio">Você pode pedir a transferência do seu contrato para o novo endereço e continuar economizando.</p>
+
+      <ol class="passos" aria-labelledby="titulo-passos">
+        <li class="passos__titulo" id="titulo-passos" style="list-style: none">Como funciona</li>
+        <li class="passo"><span class="passo__numero" aria-hidden="true">1</span><span>Informe o <strong>novo endereço</strong> e a conta de luz do imóvel.</span></li>
+        <li class="passo"><span class="passo__numero" aria-hidden="true">2</span><span>A Bulbe <strong>confirma</strong> se o novo endereço pode receber a economia.</span></li>
+        <li class="passo"><span class="passo__numero" aria-hidden="true">3</span><span>Após a qualificação, sua economia volta à fatura. A Bulbe informa o prazo quando confirmar o novo endereço.</span></li>
+      </ol>
+
+      <div class="acoes">
+        <a class="botao botao--primario" href="novo-endereco.html">Pedir transferência</a>
+        <!-- TODO: apontar para o WhatsApp oficial da Bulbe -->
+        <a class="botao botao--contorno" href="#" id="botao-whatsapp">
+          <img src="img/icone-whatsapp.png" alt="" width="20" height="20">
+          Falar no WhatsApp
+        </a>
+        <p class="status-simulado" id="status-whatsapp" hidden role="status">Simulação: aqui abriria a conversa com a Bulbe no WhatsApp.</p>
+      </div>
+
+      <p class="nota-final">Só consultar não inicia nenhum cancelamento.</p>
+
+    </main>
+  </div>
+
+  <script>
+    function ajustarAltura() {
+      document.documentElement.style.setProperty("--altura-app", window.innerHeight + "px");
+    }
+
+    ajustarAltura();
+    window.addEventListener("resize", ajustarAltura);
+    window.addEventListener("orientationchange", ajustarAltura);
+  </script>
+
+</body>
+</html>
