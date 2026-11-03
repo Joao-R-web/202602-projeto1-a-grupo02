@@ -1,72 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>HU01 - Entenda suas Faturas</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>HU01 - Entenda suas Faturas</title>
+
+  <!-- Fonte da Bulbe -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+
+  <!-- CSS comum do grupo (sempre primeiro) e CSS próprio da HU -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JavaScript comum do grupo e JavaScript próprio da HU -->
+  <script type="module" src="../../assets/js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </head>
-<body style="margin: 0; background-color: #f3f4f6; display: flex; justify-content: center; align-items: center; min-height: 100vh;">
-    <div class="app" style="width: 360px; height: 812px; background: #fff; border-radius: 30px; overflow: hidden; display: flex; flex-direction: column; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
-        
-        <!-- Cabeçalho Roxo Integrado -->
-        <header class="cabecalho" style="background-color: #090879; color: #ffffff; padding: 12px 18px 16px 18px; flex-shrink: 0;">
-            <div class="barra-status" style="display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 600; margin-bottom: 12px;">
-                <span>10:12</span>
-                <div class="status-icones">📶 🔋</div>
-            </div>
-            <div class="barra-topo" style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="#" class="botao-icone" aria-label="Voltar" style="color: #ffffff; text-decoration: none; font-size: 1.1rem; font-weight: bold;">←</a>
-                <div class="logo-container" style="display: flex; align-items: center; justify-content: center;">
-                    <img src="img/logo-bulbe-branca.png" alt="Bulbe Energia" style="height: 22px; width: auto; object-fit: contain;">
-                </div>
-                <span class="etapa" style="font-size: 0.8rem; opacity: 0.9;">1/3</span>
-            </div>
-        </header>
 
-        <!-- Conteúdo com Scroll Próprio -->
-        <main class="conteudo" style="flex: 1; overflow-y: auto; padding: 20px 16px 90px 16px;">
-            <div style="margin-bottom: 16px;">
-                <h2 class="titulo" style="font-size: 1.3rem; font-weight: 700; color: #090879; margin: 0 0 4px 0;">Entenda suas Faturas</h2>
-                <p class="subtitulo" style="font-size: 0.82rem; color: #6b7280; margin: 0;">Por que você recebe duas faturas de luz?</p>
-            </div>
+<body>
 
-            <!-- Card 1: Fatura Cemig -->
-            <div class="card" style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px; margin-bottom: 12px; background: #fff;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                    <strong style="font-size: 0.9rem; color: #090879;">1. Fatura Cemig</strong>
-                    <span style="font-size: 0.68rem; font-weight: 600; padding: 3px 10px; border-radius: 12px; background: #e6f0fb; color: #1d4e89;">Distribuição</span>
-                </div>
-                <p style="font-size: 0.78rem; color: #4b5563; margin: 0; line-height: 1.4;">Cobra uso da rede elétrica e taxa de iluminação pública.</p>
-            </div>
+  <div class="app">
 
-            <!-- Card 2: Fatura Bulbe -->
-            <div class="card" style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px; margin-bottom: 12px; background: #fff;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                    <strong style="font-size: 0.9rem; color: #090879;">2. Fatura Bulbe</strong>
-                    <span style="font-size: 0.68rem; font-weight: 600; padding: 3px 10px; border-radius: 12px; background: #dcfce7; color: #15803d;">Energia Sol</span>
-                </div>
-                <p style="font-size: 0.78rem; color: #4b5563; margin: 0; line-height: 1.4;">Cobra o consumo com desconto aplicado de energia limpa.</p>
-            </div>
+    <header class="cabecalho">
 
-            <!-- Box explicativo / FAQ -->
-            <div class="aviso" style="background-color: #fefce8; border: 1px solid #fef08a; border-radius: 12px; padding: 12px; display: flex; gap: 10px;">
-                <span style="font-size: 1rem;">💡</span>
-                <div>
-                    <strong style="font-size: 0.8rem; color: #854d0e; display: block; margin-bottom: 2px;">Por que ainda recebo a fatura da Cemig?</strong>
-                    <p style="font-size: 0.75rem; color: #713f12; margin: 0; line-height: 1.35;">A Cemig mantém os fios e postes. Você paga à Cemig a taxa de infraestrutura e à Bulbe a energia com até 15% de desconto.</p>
-                </div>
-            </div>
-        </main>
+      <div class="barra-status">
+        <span>10:12</span>
+        <div class="status-icones">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true">
+            <rect x="0" y="8" width="3" height="4" rx="1"/>
+            <rect x="5" y="5" width="3" height="7" rx="1"/>
+            <rect x="10" y="2.5" width="3" height="9.5" rx="1"/>
+            <rect x="15" y="0" width="3" height="12" rx="1"/>
+          </svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none" aria-hidden="true">
+            <rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor"/>
+            <rect x="2.5" y="2.5" width="16" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="22" y="4" width="2" height="4" rx="1" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
 
-        <!-- Rodapé Preso na Base -->
-        <footer class="rodape rodape--acao" style="position: absolute; bottom: 0; left: 0; right: 0; background: #fff; padding: 12px 16px; border-top: 1px solid #f3f4f6;">
-            <a href="como-fica.html" class="botao botao--primario" style="display: block; width: 100%; background: #090879; color: #fff; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; box-sizing: border-box;">Entendi a Cobrança</a>
-            <p style="text-align: center; font-size: 0.68rem; color: #6b7280; margin: 6px 0 0 0;">Sem duplicidade de pagamento. Garantido pela Bulbe.</p>
-        </footer>
-    </div>
+      <div class="barra-topo">
+        <a href="#" class="botao-icone" aria-label="Voltar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </a>
+
+        <img class="logo-img" src="../../assets/img/logo-bulbe-branca.png" alt="Bulbe" width="101" height="29">
+
+        <span class="etapa">1/3</span>
+      </div>
+
+    </header>
+
+    <main class="conteudo" id="conteudo">
+
+      <div>
+        <h1 class="titulo">Entenda suas Faturas</h1>
+        <p class="subtitulo">Por que você recebe duas faturas de luz?</p>
+      </div>
+
+      <!-- Card 1: Fatura Cemig -->
+      <div class="card">
+        <div class="linha">
+          <strong class="linha__nome">1. Fatura Cemig</strong>
+          <span class="selo selo--info">Distribuição</span>
+        </div>
+        <p class="linha__detalhe">Cobra uso da rede elétrica e taxa de iluminação pública.</p>
+      </div>
+
+      <!-- Card 2: Fatura Bulbe -->
+      <div class="card">
+        <div class="linha">
+          <strong class="linha__nome">2. Fatura Bulbe</strong>
+          <span class="selo selo--verde">Energia Sol</span>
+        </div>
+        <p class="linha__detalhe">Cobra o consumo com desconto aplicado de energia limpa.</p>
+      </div>
+
+      <!-- Box explicativo -->
+      <div class="aviso">
+        <svg class="aviso__icone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 17v.01"/>
+          <path d="M12 13.5a1.5 1.5 0 0 1 1-1.5 2.6 2.6 0 1 0-3-4"/>
+        </svg>
+        <div>
+          <strong class="aviso__titulo">Por que ainda recebo a fatura da Cemig?</strong>
+          <p class="aviso__texto">A Cemig mantém os fios e postes. Você paga à Cemig a taxa de infraestrutura e à Bulbe a energia com até 15% de desconto.</p>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="rodape rodape--acao">
+      <a href="resumo-mes.html" class="botao botao--primario">Entendi a Cobrança</a>
+      <p class="nota nota--rodape">Sem duplicidade de pagamento. Garantido pela Bulbe.</p>
+    </footer>
+  </div>
+
 </body>
 </html>

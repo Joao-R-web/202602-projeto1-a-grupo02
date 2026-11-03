@@ -1,86 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>HU01 - Veja como fica a conta</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>HU01 - Veja como fica a conta</title>
+
+  <!-- Fonte da Bulbe -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+
+  <!-- CSS comum do grupo (sempre primeiro) e CSS próprio da HU -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JavaScript comum do grupo e JavaScript próprio da HU -->
+  <script type="module" src="../../assets/js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </head>
-<body style="margin: 0; background-color: #f3f4f6; display: flex; justify-content: center; align-items: center; min-height: 100vh;">
-    <div class="app" style="width: 360px; height: 812px; background: #fff; border-radius: 30px; overflow: hidden; display: flex; flex-direction: column; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
-        
-        <!-- Cabeçalho -->
-        <header class="cabecalho" style="background-color: #090879; color: #ffffff; padding: 12px 18px 16px 18px; flex-shrink: 0;">
-            <div class="barra-status" style="display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 600; margin-bottom: 12px;">
-                <span>10:12</span>
-                <div class="status-icones">📶 🔋</div>
-            </div>
-            <div class="barra-topo" style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="index.html" class="botao-icone" aria-label="Voltar" style="color: #ffffff; text-decoration: none; font-size: 1.1rem; font-weight: bold;">←</a>
-                <div class="logo-container" style="display: flex; align-items: center; justify-content: center;">
-                    <img src="img/logo-bulbe-branca.png" alt="Bulbe Energia" style="height: 22px; width: auto; object-fit: contain;">
-                </div>
-                <span class="etapa" style="font-size: 0.8rem; opacity: 0.9;">2/3</span>
-            </div>
-        </header>
 
-        <!-- Conteúdo Principal -->
-        <main class="conteudo" style="flex: 1; overflow-y: auto; padding: 20px 16px 100px 16px;">
-            <div style="margin-bottom: 16px;">
-                <h2 class="titulo" style="font-size: 1.25rem; font-weight: 700; color: #090879; margin: 0 0 4px 0;">Veja como fica a conta de luz</h2>
-                <p class="subtitulo" style="font-size: 0.8rem; color: #6b7280; margin: 0;">Valores de exemplo baseados na sua média</p>
-            </div>
+<body>
 
-            <!-- Card de Comparação -->
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; margin-bottom: 16px;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.82rem; color: #64748b;">
-                    <span>Antes (1 fatura):</span>
-                    <strong id="val-antes" style="color: #1e293b;">R$ 0,00</strong>
-                </div>
-                <hr style="border: 0; border-top: 1px dashed #cbd5e1; margin: 8px 0;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.82rem; color: #64748b;">
-                    <span>Agora - Cemig:</span>
-                    <strong id="val-cemig" style="color: #1e293b;">R$ 0,00</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.82rem; color: #64748b;">
-                    <span>Agora - Bulbe:</span>
-                    <strong id="val-bulbe" style="color: #090879;">R$ 0,00</strong>
-                </div>
-                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 8px 0;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.9rem; font-weight: 700; color: #090879;">
-                    <span>Total por mês:</span>
-                    <span id="val-total">R$ 0,00</span>
-                </div>
+  <div class="app">
 
-                <!-- Tag Economia -->
-                <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: 8px; padding: 10px; text-align: center; color: #15803d; font-weight: 600; font-size: 0.85rem;">
-                    Economia de <span id="val-economia">R$ 0,00</span> por mês
-                </div>
-            </div>
+    <header class="cabecalho">
 
-            <!-- Avisar Titular com o Botão do WhatsApp corrigido -->
-            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 14px;">
-                <strong style="font-size: 0.85rem; color: #166534; display: block; margin-bottom: 4px;">Avise o titular antes de continuar</strong>
-                <p style="font-size: 0.78rem; color: #15803d; margin: 0 0 12px 0; line-height: 1.35;">Ele vai receber duas contas. Avise para ele não estranhar a cobrança da Bulbe.</p>
-                
-                <a href="mensagem.html" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #25d366; color: #fff; text-decoration: none; padding: 10px; border-radius: 8px; font-size: 0.82rem; font-weight: 600;">
-                    <span style="background: #ffffff; border-radius: 50%; padding: 3px; display: flex; align-items: center; justify-content: center;">
-                        <img src="img/icone-whatsapp.png" alt="WhatsApp" style="height: 14px; width: 14px; object-fit: contain;">
-                    </span>
-                    Mostrar ao titular pelo WhatsApp
-                </a>
-            </div>
-        </main>
+      <div class="barra-status">
+        <span>10:12</span>
+        <div class="status-icones">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true">
+            <rect x="0" y="8" width="3" height="4" rx="1"/>
+            <rect x="5" y="5" width="3" height="7" rx="1"/>
+            <rect x="10" y="2.5" width="3" height="9.5" rx="1"/>
+            <rect x="15" y="0" width="3" height="12" rx="1"/>
+          </svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none" aria-hidden="true">
+            <rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor"/>
+            <rect x="2.5" y="2.5" width="16" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="22" y="4" width="2" height="4" rx="1" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
 
-        <!-- Rodapé Preso na Base -->
-        <footer class="rodape rodape--acao" style="position: absolute; bottom: 0; left: 0; right: 0; background: #fff; padding: 12px 16px; border-top: 1px solid #f3f4f6;">
-            <a href="mensagem.html" class="botao botao--primario" style="display: block; width: 100%; background: #090879; color: #fff; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; box-sizing: border-box;">Continuar</a>
-        </footer>
-    </div>
+      <div class="barra-topo">
+        <a href="index.html" class="botao-icone" aria-label="Voltar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </a>
 
-    <script src="js/main.js"></script>
+        <img class="logo-img" src="../../assets/img/logo-bulbe-branca.png" alt="Bulbe" width="101" height="29">
+
+        <span class="etapa">2/3</span>
+      </div>
+
+    </header>
+
+    <main class="conteudo" id="conteudo">
+
+      <div>
+        <h1 class="titulo">Veja como fica a conta de luz</h1>
+        <p class="subtitulo">Valores de exemplo baseados na sua média</p>
+      </div>
+
+      <!-- Comparação (os valores são preenchidos por js/main.js) -->
+      <div class="card">
+        <div class="linha">
+          <span class="linha__nome">Antes <span class="linha__obs">(1 fatura)</span></span>
+          <strong class="linha__valor" id="val-antes">R$ 0,00</strong>
+        </div>
+
+        <hr class="separador">
+
+        <div class="linha">
+          <span class="linha__nome">Agora · Cemig</span>
+          <strong class="linha__valor" id="val-cemig">R$ 0,00</strong>
+        </div>
+        <div class="linha">
+          <span class="linha__nome">Agora · Bulbe</span>
+          <strong class="linha__valor" id="val-bulbe">R$ 0,00</strong>
+        </div>
+
+        <div class="linha total">
+          <span class="linha__nome">Total por mês</span>
+          <strong class="linha__valor" id="val-total">R$ 0,00</strong>
+        </div>
+
+        <div class="economia">
+          <span>Economia por mês</span>
+          <span id="val-economia">R$ 0,00</span>
+        </div>
+      </div>
+
+      <!-- Avisar o titular -->
+      <div class="card-titular">
+        <h2>Avise o titular antes de continuar</h2>
+        <p>Ele vai receber duas contas. Avise para ele não estranhar a cobrança da Bulbe.</p>
+        <a href="mensagem.html" class="botao botao--whatsapp">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/>
+            <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>
+          </svg>
+          Mostrar ao titular pelo WhatsApp
+        </a>
+      </div>
+
+    </main>
+
+    <footer class="rodape rodape--acao">
+      <a href="mensagem.html" class="botao botao--primario">Continuar</a>
+    </footer>
+  </div>
+
 </body>
 </html>
