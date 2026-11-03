@@ -1,12 +1,7 @@
-  /* ========================================
-   RESET E VARIÁVEIS
+/* ========================================
+   BULBE - CSS INDIVIDUAL ELITA
+   Baseado no CSS original da tela
 ======================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 :root {
     --azul-bulbe: #08068D;
@@ -14,26 +9,8 @@
     --azul-fundo: #eef2ff;
     --borda: #e1e5ef;
     --texto-suave: #515e76;
-    --verde: #159447;
+    --verde: #23C97B;
     --verde-linha: #bce4ca;
-    --fundo-pagina: #ececec;
-    --altura-app: 100dvh;
-}
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-}
-
-body {
-    min-height: var(--altura-app);
-    background-color: var(--fundo-pagina);
-    font-family: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
-    color: var(--azul-bulbe);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* ========================================
@@ -43,25 +20,12 @@ body {
 .app {
     width: min(390px, 100vw);
     height: min(812px, 96vh);
-    background-color: #ffffff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
 }
 
 @media (pointer: coarse), (max-width: 600px) {
-    body {
-        display: block;
-        background-color: #ffffff;
-    }
-
     .app {
         width: 100%;
-        height: var(--altura-app);
-        border-radius: 0;
-        box-shadow: none;
+        height: 100dvh;
     }
 }
 
@@ -70,27 +34,12 @@ body {
 ======================================== */
 
 .cabecalho {
-    flex: 0 0 auto;
     padding: calc(env(safe-area-inset-top) + 4px) 16px 16px;
-    background-color: var(--azul-bulbe);
-    color: #ffffff;
 }
 
 .barra-status {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     height: 30px;
     padding: 0 4px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #ffffff;
-}
-
-.status-icones {
-    display: flex;
-    align-items: center;
-    gap: 6px;
 }
 
 .barra-topo {
@@ -102,37 +51,30 @@ body {
     margin: 8px 0 4px;
 }
 
+/* Botões do cabeçalho */
+
 .botao-icone {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
     width: 38px;
     height: 38px;
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
+    flex-shrink: 0;
+    border-radius: 50%;
 }
 
-.logo {
+/* Logo centralizada */
+
+.barra-topo .logo-img {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-}
-
-.logo img {
     display: block;
     width: 105px;
+    height: auto;
     max-height: 38px;
     object-fit: contain;
 }
+
+/* Notificações e perfil */
 
 .acoes-direita {
     display: flex;
@@ -142,34 +84,17 @@ body {
 }
 
 .indicador {
-    position: absolute;
     top: 0;
     right: 0;
     min-width: 17px;
     height: 17px;
-    padding: 0 4px;
     border-radius: 10px;
-    background-color: #e53935;
-    color: #ffffff;
-    font-size: 0.65rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .perfil {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
     width: 36px;
     height: 36px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    color: var(--azul-bulbe);
-    font-size: 0.8rem;
-    font-weight: 700;
+    flex-shrink: 0;
 }
 
 /* ========================================
@@ -177,15 +102,13 @@ body {
 ======================================== */
 
 .conteudo {
-    flex: 1;
-    min-height: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
     padding: 24px 18px 20px;
     background-color: #ffffff;
     scrollbar-width: thin;
     scrollbar-color: #a2b3d5 transparent;
 }
+
+/* Introdução */
 
 .introducao {
     margin-bottom: 28px;
@@ -214,12 +137,6 @@ body {
     flex-direction: column;
 }
 
-/*
-   Cada etapa mantém sua posição natural.
-   A linha é desenhada em relação ao círculo,
-   sem depender do espaçamento do texto.
-*/
-
 .etapa-item {
     position: relative;
     display: flex;
@@ -228,7 +145,7 @@ body {
     padding: 4px 0 25px;
 }
 
-/* Linha de conexão entre os círculos */
+/* Linha entre os círculos */
 
 .etapa-item:not(:last-child)::after {
     content: "";
@@ -241,13 +158,13 @@ body {
     background-color: var(--borda);
 }
 
-/* Linha das etapas concluídas */
+/* Linha verde das etapas concluídas */
 
 .etapa-item.concluido:not(:last-child)::after {
     background-color: var(--verde-linha);
 }
 
-/* Círculos das etapas */
+/* Círculos */
 
 .etapa-icone {
     position: relative;
@@ -263,17 +180,14 @@ body {
     font-weight: 700;
 }
 
-/* Etapa concluída */
+/* Concluída */
 
 .etapa-item.concluido .etapa-icone {
     background-color: var(--verde);
     color: #ffffff;
 }
 
-/* Etapa atual
-   O destaque fica no fundo, sem deslocar o círculo
-   nem interferir na linha vertical.
-*/
+/* Etapa atual */
 
 .etapa-item.andamento {
     margin: 0 -8px 16px;
@@ -281,9 +195,6 @@ body {
     border-radius: 12px;
     background-color: var(--azul-fundo);
 }
-
-/* Compensa o espaçamento extra da etapa atual
-   para manter a linha alinhada ao centro do círculo. */
 
 .etapa-item.andamento:not(:last-child)::after {
     left: 21px;
@@ -305,7 +216,7 @@ body {
     color: #647493;
 }
 
-/* Textos */
+/* Textos das etapas */
 
 .etapa-texto {
     flex: 1;
@@ -406,31 +317,17 @@ body {
 ======================================== */
 
 .rodape {
-    flex: 0 0 auto;
-    background-color: #ffffff;
     border-top: 1px solid var(--borda);
 }
 
 .navegacao {
-    display: flex;
-    justify-content: space-around;
     padding: 10px 6px calc(10px + env(safe-area-inset-bottom));
 }
 
 .nav-item {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 5px;
     padding: 4px 0;
-    background: transparent;
-    border: none;
-    color: #71809f;
-    font-family: inherit;
     font-size: 0.73rem;
-    cursor: pointer;
 }
 
 .nav-item.ativo {
@@ -455,6 +352,7 @@ body {
 ======================================== */
 
 @media (max-width: 360px) {
+
     .conteudo {
         padding: 18px 14px;
     }
@@ -480,7 +378,7 @@ body {
         padding: 12px;
     }
 
-    .logo img {
+    .barra-topo .logo-img {
         width: 88px;
     }
 }

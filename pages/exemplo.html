@@ -5,190 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Bulbe</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- Fonte da Bulbe -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
 
-    :root {
-      --azul-bulbe: #17305a;        
-      --azul-claro: #8a9bb5;        
-      --borda: #dde3ec;             
-      --texto-suave: #5b6b82;       
-      --vermelho: #d93a2f;          
-      --fundo-pagina: #ececec;
-      --altura-app: 100dvh;         
-    }
+  <!-- CSS comum do grupo (sempre primeiro) -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- CSS próprio da sua tela (depois do comum), se precisar:
+  <link rel="stylesheet" href="css/style.css">
+  -->
 
-    html, body {
-      height: 100%;
-    }
-
-    body {
-      min-height: var(--altura-app);
-      background-color: var(--fundo-pagina);
-      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--azul-bulbe);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .app {
-      width: min(390px, 100vw);
-      height: min(820px, 96vh);
-      background-color: #ffffff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-      display: flex;
-      flex-direction: column;
-    }
-
-    @media (pointer: coarse), (max-width: 600px) {
-      body {
-        display: block;
-        background: #ffffff;
-      }
-
-      .app {
-        width: 100%;
-        height: var(--altura-app);
-        border-radius: 0;
-        box-shadow: none;
-      }
-    }
-
-    .cabecalho {
-      flex: 0 0 auto;
-      padding: env(safe-area-inset-top) 16px 12px;
-    }
-
-    .barra-status {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 32px;
-      padding: 0 4px;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .status-icones {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .barra-topo {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 8px 0 14px;
-    }
-
-    .botao-icone {
-      background: none;
-      border: none;
-      color: var(--azul-bulbe);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      position: relative;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-
-    .acoes-direita {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .indicador {
-      position: absolute;
-      top: 0;
-      right: 0;
-      min-width: 16px;
-      height: 16px;
-      padding: 0 4px;
-      border-radius: 8px;
-      background-color: var(--vermelho);
-      color: #ffffff;
-      font-size: 0.65rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .perfil {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: var(--azul-bulbe);
-      color: #ffffff;
-      font-size: 0.8rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .conteudo {
-      flex: 1;
-      min-height: 0;
-      overflow-y: auto;
-      overflow-x: hidden;
-      padding: 0 16px;
-    }
-
-    .rodape {
-      flex: 0 0 auto;
-      background-color: #ffffff;
-    }
-
-    .navegacao {
-      display: flex;
-      justify-content: space-around;
-      padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
-      border-top: 1px solid var(--borda);
-    }
-
-    .nav-item {
-      flex: 1;
-      background: none;
-      border: none;
-      font-family: inherit;
-      color: var(--azul-claro);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.72rem;
-      cursor: pointer;
-    }
-
-    .nav-item.ativo {
-      color: var(--azul-bulbe);
-      font-weight: 600;
-    }
-
-    @media (max-height: 520px) {
-      .barra-status { height: 24px; }
-      .barra-topo { margin: 4px 0 8px; }
-    }
-  </style>
+  <!-- JavaScript comum do grupo -->
+  <script type="module" src="../assets/js/main.js"></script>
+  <!-- JavaScript próprio da sua tela, se precisar:
+  <script type="module" src="js/main.js"></script>
+  -->
 </head>
+
+<!--
+  COMO USAR ESTE TEMPLATE
+  - Copie este arquivo para a sua pasta em pages/ e ajuste os caminhos ("../" vira "../../").
+  - Ele vem montado para quem AINDA NÃO ESTÁ LOGADO (cadastro): voltar, logo
+    e botão de ação no rodapé.
+  - Para uma tela de quem JÁ ESTÁ LOGADO, troque os blocos marcados com "LOGADO":
+    tire o comentário deles e comente (ou apague) os blocos "CADASTRO" correspondentes.
+    Os estilos dos dois casos já estão no CSS comum.
+-->
 
 <body>
 
@@ -199,13 +42,13 @@
       <div class="barra-status">
         <span>10:12</span>
         <div class="status-icones">
-          <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-label="Sinal">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true">
             <rect x="0" y="8" width="3" height="4" rx="1"/>
             <rect x="5" y="5" width="3" height="7" rx="1"/>
             <rect x="10" y="2.5" width="3" height="9.5" rx="1"/>
             <rect x="15" y="0" width="3" height="12" rx="1"/>
           </svg>
-          <svg width="24" height="12" viewBox="0 0 24 12" fill="none" aria-label="Bateria">
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none" aria-hidden="true">
             <rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor"/>
             <rect x="2.5" y="2.5" width="16" height="7" rx="1.5" fill="currentColor"/>
             <rect x="22" y="4" width="2" height="4" rx="1" fill="currentColor"/>
@@ -214,19 +57,33 @@
       </div>
 
       <div class="barra-topo">
-        <button class="botao-icone" aria-label="Abrir menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+
+        <!-- CADASTRO: botão voltar -->
+        <button type="button" class="botao-icone" aria-label="Voltar" onclick="history.back()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+
+        <!-- LOGADO: menu (no lugar do voltar)
+        <button type="button" class="botao-icone" aria-label="Abrir menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
             <line x1="4" y1="7" x2="20" y2="7"/>
             <line x1="4" y1="12" x2="20" y2="12"/>
             <line x1="4" y1="17" x2="20" y2="17"/>
           </svg>
         </button>
+        -->
 
-        <h1 class="logo">bulbe</h1>
+        <img class="logo-img" src="../assets/img/logo-bulbe-branca.png" alt="Bulbe" width="101" height="29">
 
+        <!-- CADASTRO: espaço vazio à direita, para a logo ficar no centro -->
+        <span aria-hidden="true"></span>
+
+        <!-- LOGADO: notificações e perfil (no lugar do espaço vazio)
         <div class="acoes-direita">
-          <button class="botao-icone" aria-label="Notificações">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button type="button" class="botao-icone" aria-label="Notificações: 2 novas">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
               <path d="M13.7 21a2 2 0 0 1-3.4 0"/>
             </svg>
@@ -234,42 +91,55 @@
           </button>
           <div class="perfil" aria-label="Perfil">FA</div>
         </div>
+        -->
+
       </div>
 
     </header>
 
     <main class="conteudo" id="conteudo">
+
+      <div>
+        <h1 class="titulo">Título da tela</h1>
+        <p class="subtitulo">Subtítulo ou orientação curta.</p>
+      </div>
+
+      <!-- O conteúdo da sua tela entra aqui -->
+
     </main>
 
-    <footer class="rodape">
+    <!-- CADASTRO: rodapé com o botão da etapa -->
+    <footer class="rodape rodape--acao">
+      <button type="button" class="botao botao--primario">Próximo</button>
+    </footer>
 
+    <!-- LOGADO: rodapé com as abas do app (no lugar do rodapé acima)
+    <footer class="rodape">
       <nav class="navegacao" aria-label="Navegação principal">
-        <button class="nav-item ativo">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button type="button" class="nav-item ativo" aria-current="page">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
           </svg>
           Conexão
         </button>
-
-        <button class="nav-item">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button type="button" class="nav-item">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/>
             <line x1="9" y1="8" x2="15" y2="8"/>
             <line x1="9" y1="12" x2="15" y2="12"/>
           </svg>
           Faturas
         </button>
-
-        <button class="nav-item">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <button type="button" class="nav-item">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
             <line x1="6" y1="20" x2="6" y2="12"/>
             <line x1="12" y1="20" x2="12" y2="4"/>
             <line x1="18" y1="20" x2="18" y2="9"/>
           </svg>
           Consumo
         </button>
-        <button class="nav-item">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button type="button" class="nav-item">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="8" width="18" height="4" rx="1"/>
             <path d="M5 12v9h14v-9"/>
             <line x1="12" y1="8" x2="12" y2="21"/>
@@ -279,20 +149,10 @@
           Indicações
         </button>
       </nav>
-
     </footer>
+    -->
 
   </div>
-
-  <script>
-    function ajustarAltura() {
-      document.documentElement.style.setProperty("--altura-app", window.innerHeight + "px");
-    }
-
-    ajustarAltura();
-    window.addEventListener("resize", ajustarAltura);
-    window.addEventListener("orientationchange", ajustarAltura);
-  </script>
 
 </body>
 </html>
