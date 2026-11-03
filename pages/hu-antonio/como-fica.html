@@ -7,13 +7,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+
+  <!-- CSS comum do grupo e, depois, o CSS só destas telas -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+
+  <!-- JavaScript comum do grupo e o destas telas -->
+  <script type="module" src="../../assets/js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </head>
 
 <body data-tela="conta">
 
-  <div class="app app--adesao">
+  <div class="app">
 
     <header class="cabecalho">
 
@@ -40,7 +46,7 @@
             <path d="M15 18l-6-6 6-6"/>
           </svg>
         </a>
-        <img class="logo-img" src="img/logo-bulbe-branca.png" alt="Bulbe" width="100" height="29">
+        <img class="logo-img" src="../../assets/img/logo-bulbe-branca.png" alt="Bulbe" width="101" height="29">
         <span class="etapa" aria-label="Etapa 2 de 3">2/3</span>
       </div>
 
@@ -87,7 +93,7 @@
               <div class="economia-pedaco" data-altura="economia">− <span data-valor="economia">R$ 30,00</span></div>
               <div class="fatura fatura--bulbe" data-altura="bulbe">
                 <span class="fatura__rotulo">Fatura</span>
-                <img class="fatura__logo" src="img/logo-bulbe-branca.png" alt="" width="64" height="19">
+                <img class="fatura__logo" src="../../assets/img/logo-bulbe-branca.png" alt="" width="66" height="19">
                 <svg class="sol" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5B700" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5" fill="#F5B700"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
                 <span class="fatura__valor" data-valor="bulbe">R$ 199,87</span>
                 <span class="codigo"></span>
@@ -109,7 +115,7 @@
         <h2 id="titulo-alerta">Avise o titular antes de continuar</h2>
         <p>Ele vai receber duas contas. Avise para ele não estranhar a cobrança da Bulbe.</p>
         <a class="botao botao--whatsapp-suave" href="mensagem.html">
-          <img src="img/icone-whatsapp.png" alt="" width="20" height="20">
+          <img src="../../assets/img/icone-whatsapp-branco.png" alt="" width="20" height="20">
           Mostrar ao titular pelo WhatsApp
         </a>
       </section>
@@ -123,15 +129,6 @@
 
   </div>
 
-  <script>
-    function ajustarAltura() {
-      document.documentElement.style.setProperty("--altura-app", window.innerHeight + "px");
-    }
-
-    ajustarAltura();
-    window.addEventListener("resize", ajustarAltura);
-    window.addEventListener("orientationchange", ajustarAltura);
-  </script>
 
 </body>
 </html>

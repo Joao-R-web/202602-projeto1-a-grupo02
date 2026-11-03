@@ -1,7 +1,11 @@
+import { formatarReais, mascararWhatsApp, whatsAppValido } from '../../../assets/js/main.js';
+
 /* =========================================================
    HU do Antônio — Explicar as duas contas ao titular
    Telas em pages/hu-antonio/: index.html (dados) → como-fica.html (conta) → mensagem.html (prévia)
    O envio ao titular é SIMULADO: nenhuma mensagem real é enviada.
+   As funções genéricas (valores em reais, máscara e validação de WhatsApp)
+   vêm do JavaScript comum do grupo (assets/js/main.js).
    ========================================================= */
 
 // Valores de EXEMPLO. Na versão real, vêm da conta de luz enviada pelo cliente.
@@ -19,18 +23,6 @@ const ENDERECO_EXEMPLO = 'Rua das Acácias, 120, Betim';
 const CHAVE_CADASTRO = 'bulbe-cadastro';
 
 /* ---------- Utilitários ---------- */
-
-const formatarReais = (valor) =>
-  valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-const somenteDigitos = (texto) => texto.replace(/\D/g, '');
-
-function mascararWhatsApp(texto) {
-  const d = somenteDigitos(texto).slice(0, 11);
-  if (d.length <= 2) return d.length ? `(${d}` : '';
-  if (d.length <= 7) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
-  return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
-}
 
 // sessionStorage pode falhar (aba anônima, bloqueio do navegador): nunca deixa a página quebrar.
 function salvarCadastro(dados) {
@@ -84,7 +76,7 @@ function iniciarTelaDados() {
   // Regras simples de validação (esboço).
   const valido = {
     nome: (v) => v.trim().length >= 3,
-    whats: (v) => somenteDigitos(v).length === 11
+    whats: whatsAppValido
   };
 
   function campoValido(input) {
@@ -215,7 +207,6 @@ const telas = {
   mensagem: iniciarTelaMensagem
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  const iniciar = telas[document.body.dataset.tela];
-  if (iniciar) iniciar();
-});
+// Módulos rodam depois que a página é lida, então o HTML já está pronto aqui.
+const iniciar = telas[document.body.dataset.tela];
+if (iniciar) iniciar();

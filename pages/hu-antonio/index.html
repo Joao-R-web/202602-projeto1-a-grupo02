@@ -7,13 +7,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+
+  <!-- CSS comum do grupo e, depois, o CSS só destas telas -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+
+  <!-- JavaScript comum do grupo e o destas telas -->
+  <script type="module" src="../../assets/js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </head>
 
 <body data-tela="dados">
 
-  <div class="app app--adesao">
+  <div class="app">
 
     <header class="cabecalho">
 
@@ -40,7 +46,7 @@
             <path d="M15 18l-6-6 6-6"/>
           </svg>
         </button>
-        <img class="logo-img" src="img/logo-bulbe-branca.png" alt="Bulbe" width="100" height="29">
+        <img class="logo-img" src="../../assets/img/logo-bulbe-branca.png" alt="Bulbe" width="101" height="29">
         <span class="etapa" aria-label="Etapa 1 de 3">1/3</span>
       </div>
 
@@ -83,7 +89,7 @@
           </div>
           <div class="campo campo--whatsapp">
             <label for="titular-whats">WhatsApp do titular <span class="obrigatorio">*</span></label>
-            <img class="campo__icone" src="img/icone-whatsapp.png" alt="" width="20" height="20">
+            <img class="campo__icone" src="../../assets/img/icone-whatsapp.png" alt="" width="20" height="20">
             <input type="tel" id="titular-whats" inputmode="numeric" placeholder="(00) 00000-0000" required aria-describedby="titular-whats-erro">
             <p class="campo__erro" id="titular-whats-erro" hidden>Informe um WhatsApp com DDD, 11 números.</p>
           </div>
@@ -98,7 +104,7 @@
           </div>
           <div class="campo campo--whatsapp">
             <label for="seu-whats">Seu WhatsApp <span class="obrigatorio">*</span></label>
-            <img class="campo__icone" src="img/icone-whatsapp.png" alt="" width="20" height="20">
+            <img class="campo__icone" src="../../assets/img/icone-whatsapp.png" alt="" width="20" height="20">
             <input type="tel" id="seu-whats" inputmode="numeric" autocomplete="tel-national" placeholder="(00) 00000-0000" required aria-describedby="seu-whats-erro">
             <p class="campo__erro" id="seu-whats-erro" hidden>Informe um WhatsApp com DDD, 11 números.</p>
           </div>
@@ -121,15 +127,6 @@
 
   </div>
 
-  <script>
-    function ajustarAltura() {
-      document.documentElement.style.setProperty("--altura-app", window.innerHeight + "px");
-    }
-
-    ajustarAltura();
-    window.addEventListener("resize", ajustarAltura);
-    window.addEventListener("orientationchange", ajustarAltura);
-  </script>
 
 </body>
 </html>
