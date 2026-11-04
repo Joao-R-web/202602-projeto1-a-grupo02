@@ -1,32 +1,39 @@
-# [Guia de Entendimento do Cliente Bulbe]
+# Guia de Entendimento do Cliente Bulbe
 
 > Projeto em Ciência de Dados I · Ibmec BH · 2º semestre de 2026
-> Cliente: **Bulbe Energia** · Turma **[A]** · Squad **[02]**
+> Cliente: **Bulbe Energia** · Turma **A** · Squad **02**
 
-[Guia explicativo, em linguagem simples sobre como funciona a Bulbe e de onde vem o desconto ao cliente novo, da adesão ao pagamento da primeira fatura.]
+Guia explicativo, em linguagem simples, sobre como funciona a Bulbe e de onde vem o desconto, para o cliente novo, da adesão ao pagamento da primeira fatura.
 
 ---
 
 ## 1. Problema
 
-[O problema escolhido pelo grupo foi o de falta de entendimento do produto e da onde vem o desconto, aonde 27,7% do churn é por conta deste problema.]
+O problema escolhido pelo grupo é a falta de entendimento do produto e de onde vem o desconto: 27,7% do churn da Bulbe é causado por esse problema.
 
-- **Dor escolhida:** [Clientes não entendem como o produto funciona e o que é energia solar]
-- **Evidência:** [27,7% do churn é por não compreensão  do produto]
-- **Indicador que a solução pretende mover:** [Melhora da compreensão do produto na parte do usuário | melhora no churn | melhora na comunicação com o cliente antes e depois da adesão]
+- **Dor escolhida:** clientes não entendem como o produto funciona nem o que é energia solar por assinatura.
+- **Evidência:** 27,7% do churn acontece por não compreensão do produto.
+- **Indicadores que a solução pretende mover:** compreensão do produto pelo usuário · churn · comunicação com o cliente antes e depois da adesão.
 
-## 2. Persona e jornada
+## 2. Personas e jornadas
 
-- **Persona 1:** [Rosana Ferreira, 49 anos, secretária escolar de Contagem (MG), cuida das contas da casa; aderiu à Bulbe sem saber em que etapa estava e, ao receber o boleto junto com a conta menor da Cemig, achou que era cobrança duplicada ou golpe.]
-- **Persona 2:** [Fernanda Lopes, 42 anos, MEI e dona de uma confeitaria em Contagem (MG), com conta de luz acima de R$ 400; esperava R$ 40 a R$ 50 de desconto, recebeu R$ 29,95 e depois R$ 0,17 sem explicação, e descobriu fidelidade de 24 meses com multa.]
-- **Mapa de jornada:** [docs/jornada.md](docs/jornada.md)
+Cada integrante criou uma persona e o mapa de jornada dela.
+
+| Persona | Integrante | Mapa de jornada |
+| --- | --- | --- |
+| **Antônio**, 63 anos, aposentado de Betim (MG). A filha fez a adesão no celular dele e, sem entender o que contratou, ele acha que o desconto veio da Cemig e trata a cobrança da Bulbe como golpe. | Thiago Peixoto | [docs/jornada-thiagopeixotogarcia.md](docs/jornada-thiagopeixotogarcia.md) |
+| **Carla Mendes**, 38 anos, analista administrativa de Contagem (MG). Aderiu pelo site atraída pela economia, mas não entende como o produto funciona e, quando chega a 1ª fatura, fica insegura e pode atrasar o pagamento ou cancelar. | João Pedro Roenick | [docs/jornada-joao.md](docs/jornada-joao.md) |
+| **Henrique**, 44 anos. Aderiu esperando R$ 40 a R$ 50 de desconto numa conta acima de R$ 400, recebeu R$ 29,95 num mês e R$ 0,17 no outro, sem explicação, e acha que a oferta de 15% não é cumprida. | Leandro Pacheco | [docs/jornada-leandro.md](docs/jornada-leandro.md) |
+| **Mariana**, 34 anos, confeiteira MEI de Contagem (MG). Vai mudar o ateliê para Betim e, sem saber o que acontece com o contrato, acha que vai ter que cancelar e recomeçar do zero. | Pedro Henrique Lima | [docs/jornada-pedro.md](docs/jornada-pedro.md) |
+| **Lucas**, 25 anos, estagiário de Tecnologia em Belo Horizonte (MG). Achou que a Bulbe substituía a Cemig e, ao receber as duas faturas, acha que paga duas vezes, deixa a da Bulbe sem pagar e pensa em cancelar. | Sandro Viglioni | [docs/jornada-sandro.md](docs/jornada-sandro.md) |
+| **Maria**, 35 anos, assistente financeira de Betim (MG). Aderiu por indicação, mas não sabe em que etapa está a adesão nem quando chega a fatura da Bulbe, e teme estar sofrendo um golpe. | Elita Rodrigues | [docs/jornada-elita.md](docs/jornada-elita.md) |
 
 ## 3. Solução
 
-[Descrição curta da solução e das principais telas.]
+Um conjunto de telas do app da Bulbe que explicam, em linguagem simples, o produto, o desconto e as faturas, da adesão ao pagamento. Cada tela nasce da jornada de uma das personas.
 
 | Tela | O que faz | História relacionada |
-| ---    | --- | --- |
+| --- | --- | --- |
 | Como funciona a Bulbe? | Explica de onde vem o desconto e como a energia é produzida nas usinas solares, com ilustração e linguagem simples | HU01 |
 | Quem pode ser cliente | Primeira etapa do fluxo de 3 passos: lista os requisitos para contratar e destaca a oferta de desconto | HU01 |
 | Como funciona o desconto | Segunda etapa: compara visualmente quanto o cliente paga com e sem a Bulbe | HU01 |
@@ -36,15 +43,17 @@
 | Entendendo suas faturas | Explica a fatura da Cemig e a fatura da Bulbe e responde "por que ainda recebo a fatura da Cemig?", com botão "Entenda a cobrança" | HU01 |
 | Seu resumo do mês | Mostra quanto o cliente economizou no mês, os créditos gerados e a composição da conta, com acesso às faturas detalhadas | HU01 |
 | Fatura por WhatsApp | Mensagem com o resumo da fatura e a chave Pix para copiar e pagar | HU01 |
-| Informe seus dados e veja como fica a conta | Formulário de dados, comparação de como a conta de luz fica e mensagem de WhatsApp com o boleto | HU01 |
+| Informe seus dados, Veja como fica a conta e Confira a mensagem | Cadastro feito por um familiar: dados do titular e de quem cadastra, uma fatura que vira duas (Cemig + Bulbe) com a economia mensal e a prévia da mensagem enviada ao titular pelo WhatsApp | HU01 |
 | Perguntas frequentes | Respostas em sanfona sobre a Bulbe | HU01 |
 | Mudei de endereço, como faço? | Explica como funciona a mudança, com botões "Pedir transferência" e "Falar no WhatsApp" | HU02 |
-- **Histórias de usuário:** [docs/historias.md](docs/historias.md)
+
+- **Histórias de usuário:** [Elita](docs/historias-elita.md) · [João](docs/historias-joao.md) · [Leandro](docs/historias-leandro.md) · [Pedro](docs/historias-pedro.md) · [Sandro](docs/historias-sandro.md) · [Thiago](docs/historias-thiagopeixotogarcia.md)
 - **Wireframes:** [docs/wireframes/](docs/wireframes/)
 
 ## 4. Tecnologias
 
 - HTML, CSS e JavaScript puro (vanilla)
+- CSS e JavaScript comuns a todas as telas, em [`assets/`](assets/), com a identidade visual da Bulbe (fonte Poppins, azul `#08068D`, tela de 360 × 812)
 - Dados fictícios em JSON, lidos com `fetch` (pasta [`data/`](data/))
 - Git e GitHub (Issues, Projects e Pull Requests)
 
@@ -52,52 +61,70 @@
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/[usuario]/202602-projeto1-[turma]-[squad].git
+   git clone https://github.com/Joao-R-web/202602-projeto1-a-grupo02.git
    ```
 2. Abra a pasta no VS Code.
 3. Instale a extensão **Live Server** (o VS Code vai sugerir automaticamente).
 4. Clique com o botão direito em `index.html` e escolha **Open with Live Server**.
 
-> Abrir o `index.html` direto no navegador (duplo clique) não funciona: o `fetch` dos arquivos JSON exige um servidor.
+> Abrir o `index.html` direto no navegador (duplo clique) não funciona: o `fetch` dos arquivos JSON e os módulos JavaScript exigem um servidor.
 
 ## 6. Estrutura do repositório
 
 ```
 ├── index.html            # Página inicial
-├── pages/                # Demais telas da solução
+├── pages/
+│   ├── exemplo.html      # Template das telas (base para copiar)
+│   └── <pasta de cada integrante>/   # Telas, CSS e JS próprios de cada história
 ├── assets/
-│   ├── css/style.css     # Estilos
-│   ├── js/main.js        # Lógica da página inicial
+│   ├── css/style.css     # CSS comum do grupo (cores, fonte, cabeçalho, rodapé, botões, campos)
+│   ├── js/main.js        # JavaScript comum do grupo (altura do app e funções genéricas)
 │   ├── js/api.js         # Leitura dos dados (fetch)
-│   └── img/              # Imagens e ícones
+│   └── img/              # Logos da Bulbe e ícones
 ├── data/                 # Dados fictícios em JSON
-├── docs/                 # Jornada, histórias, wireframes e sprints
+├── docs/                 # Jornadas, histórias, wireframes e sprints
 └── .github/              # Modelos de Issue e de Pull Request
 ```
 
+### Como criar uma tela
+
+1. Copie o `pages/exemplo.html` para a sua pasta em `pages/` e ajuste os caminhos (`../assets/` vira `../../assets/`).
+2. O template vem montado para telas de quem ainda não está logado (cadastro). Para uma tela de quem já está logado, tire o comentário dos blocos marcados com `LOGADO` e apague os blocos `CADASTRO` correspondentes.
+3. Carregue primeiro os arquivos comuns e depois os seus, se tiver:
+   ```html
+   <link rel="stylesheet" href="../../assets/css/style.css">
+   <link rel="stylesheet" href="css/style.css">
+   <script type="module" src="../../assets/js/main.js"></script>
+   <script type="module" src="js/main.js"></script>
+   ```
+4. O que é só da sua tela fica nos seus arquivos. Mudanças em `assets/` só com combinado do grupo, numa Pull Request separada.
+
 ## 7. Quadro do projeto
 
-- **GitHub Projects:** [https://github.com/Joao-R-web/202602-projeto1-a-grupo02]
+- **GitHub Projects:** [github.com/users/Joao-R-web/projects/1](https://github.com/users/Joao-R-web/projects/1)
 
 ## 8. Equipe
 
-| Integrante | GitHub | Papel principal |
+| Integrante | GitHub | Persona e entrega |
 | --- | --- | --- |
-| [Nome] | [@usuario](https://github.com/usuario) | [ex.: Scrum Master, front-end, dados, documentação] |
-| [Nome] | [@usuario](https://github.com/usuario) | [ ] |
-| [Nome] | [@usuario](https://github.com/usuario) | [ ] |
+| Elita Rodrigues | [@elitarodrigues848-cyber](https://github.com/elitarodrigues848-cyber) | Maria: acompanhar as etapas da adesão |
+| João Pedro Roenick | [@Joao-R-web](https://github.com/Joao-R-web) | Carla: tirar dúvidas em um só lugar |
+| Leandro Pacheco | [@lelegatite1227-cmyk](https://github.com/lelegatite1227-cmyk) | Henrique: entender como o desconto é calculado |
+| Pedro Henrique Lima | [@PhLima07](https://github.com/PhLima07) | Mariana: mudar de endereço sem cancelar |
+| Sandro Viglioni | [@SandroVig](https://github.com/SandroVig) | Lucas: entender por que chegam duas faturas |
+| Thiago Peixoto | [@Thiagopeixotog](https://github.com/Thiagopeixotog) | Antônio: explicar as duas contas ao titular |
 
 ## 9. Entregas
 
 | Marco | Aula | Status |
 | --- | --- | --- |
-| Mapa de jornada | 19 | [ ] |
-| Histórias de usuário | 20 | [ ] |
-| Wireframes | 21–23 | [ ] |
-| Sprint Review I | 24 | [ ] |
-| Implementação | 25–28 | [ ] |
-| Sprint Review II | 29 | [ ] |
-| Versão final | 30 | [ ] |
+| Mapa de jornada | 19 | Concluído |
+| Histórias de usuário | 20 | Concluído |
+| Wireframes | 21–23 | Concluído |
+| Sprint Review I | 24 | Concluído |
+| Implementação | 25–28 | Concluído |
+| Sprint Review II | 29 | Pendente |
+| Versão final | 30 | Pendente |
 
 ---
 
