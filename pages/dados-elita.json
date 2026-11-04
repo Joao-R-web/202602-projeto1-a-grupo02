@@ -1,0 +1,31 @@
+{
+    "titulo": "Acompanhe suas etapas",
+    "subtitulo": "Acompanhe passo a passo o processo de conexão com a Bulbe.",
+    "etapas": [
+        {
+            "titulo": "Cadastro concluído",
+            "descricao": "Cadastro realizado com sucesso.",
+            "status": "concluido"
+        },
+        {
+            "titulo": "Aguarde a conexão",
+            "descricao": "A espera pode levar até 90 dias.",
+            "status": "concluido"
+        },
+        {
+            "titulo": "Continue pagando a Cemig",
+            "descricao": "Mantenha sua conta em dia durante a espera.",
+            "status": "concluido"
+        },
+        {
+            "titulo": "Fatura da Bulbe disponível",
+            "descricao": "Confira sua fatura e os descontos.",
+            "status": "andamento"
+        },
+        {
+            "titulo": "Pague sua fatura Bulbe",
+            "descricao": "Consulte o valor e realize o pagamento.",
+            "status": "pendente"
+        }
+    ]
+}
