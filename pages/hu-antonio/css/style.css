@@ -1,0 +1,453 @@
+/* =========================================================
+   HU do Antônio — Explicar as duas contas ao titular
+   CSS só das telas desta pasta (index.html → como-fica.html → mensagem.html).
+
+   Carregado DEPOIS do CSS comum do grupo (../../assets/css/style.css),
+   que já traz cores, fonte, cabeçalho, rodapé, títulos, botões e campos.
+   Aqui fica apenas o que é exclusivo destas telas.
+   ========================================================= */
+
+:root {
+  --whatsapp-chat: #ECE5DD;
+  --whatsapp-balao: #DCF8C6;
+}
+
+
+/* ---------- Cabeçalho: etapa (1/3) e barra de progresso do cadastro ---------- */
+
+.etapa {
+  justify-self: end;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.progresso {
+  height: 4px;
+  margin: 0 -16px -12px;   /* encosta nas bordas do app, por baixo do cabeçalho */
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.progresso__barra {
+  height: 100%;
+  background: linear-gradient(90deg, var(--verde), #19A39B);
+}
+
+
+/* ---------- Tela 3 · Valores no cartão da mensagem ---------- */
+
+.linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.linha__nome {
+  font-size: 0.92rem;
+}
+
+.linha__valor {
+  font-size: 0.92rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.total {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--borda);
+}
+
+.total .linha__valor {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--azul-bulbe);
+}
+
+.economia {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--verde);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+}
+
+
+/* ---------- Tela 3 · Prévia da mensagem do WhatsApp ---------- */
+
+.previa {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--borda);
+}
+
+.previa__topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--whatsapp);
+  color: #FFFFFF;
+}
+
+.previa__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #B9D7D1;
+}
+
+.previa__contato strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.previa__contato span {
+  font-size: 0.7rem;
+  opacity: 0.85;
+}
+
+.previa__conversa {
+  background: var(--whatsapp-chat);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.previa__aviso {
+  align-self: center;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #FFF3C4;
+  font-size: 0.72rem;
+  color: #5C4400;
+}
+
+.balao {
+  max-width: 92%;
+  padding: 8px 10px 6px;
+  border-radius: 10px 0 10px 10px;
+  background: var(--whatsapp-balao);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.balao__hora {
+  display: block;
+  margin-top: 2px;
+  text-align: right;
+  font-size: 0.68rem;
+  color: #667781;
+}
+
+.cartao-bulbe {
+  margin-top: 6px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.cartao-bulbe__topo {
+  padding: 10px 12px;
+  background: var(--azul-bulbe);
+  color: #FFFFFF;
+}
+
+.cartao-bulbe__topo .marca {
+  display: block;
+  height: 20px;
+  width: auto;
+}
+
+.cartao-bulbe__topo h3 {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.cartao-bulbe__corpo {
+  padding: 10px 12px 12px;
+}
+
+.cartao-bulbe .linha__nome,
+.cartao-bulbe .linha__valor {
+  font-size: 0.8rem;
+}
+
+.cartao-bulbe .riscado {
+  text-decoration: line-through;
+  color: var(--texto-suave);
+}
+
+.cartao-bulbe .total .linha__valor {
+  font-size: 1.15rem;
+}
+
+.cartao-bulbe .economia {
+  font-size: 0.8rem;
+}
+
+.legitimo {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--info-fundo);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--info-texto);
+}
+
+
+/* ---------- Tela 3 · Confirmação de envio ---------- */
+
+.envio-ok {
+  padding: 12px;
+  border-radius: var(--raio);
+  border: 1px solid var(--verde-borda);
+  background: var(--verde-fundo);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--verde-escuro);
+}
+
+/* =========================================================
+   Tela 2 · "Uma fatura que vira duas"
+   Paleta (60-30-10): neutros na Cemig e no fundo, azul da marca na Bulbe
+   e na navegação, verde só na economia e no WhatsApp.
+   O "Continuar" azul do rodapé é o maior peso da tela.
+   ========================================================= */
+:root {
+  --fundo-ilustra: #F6F8FB;
+  --papel-antes: #DCE3EC;
+  --papel-cemig: #B8C3D4;
+  --verde-texto: #15803D;
+  --verde-suave: #E9F8EF;
+  --verde-tracejado: #22A06B;
+}
+
+.ilustra {
+  background: var(--fundo-ilustra);
+  border-radius: 16px;
+  padding: 18px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ilustra__grade {
+  display: grid;
+  grid-template-columns: 1fr 52px 1fr;
+  align-items: start;
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.seta {
+  align-self: start;
+}
+
+.legenda-col {
+  text-align: center;
+  line-height: 1.25;
+}
+
+.legenda-col span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+}
+
+.legenda-col em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--azul-bulbe);
+}
+
+.legenda-col strong {
+  font-size: 1.05rem;
+  color: var(--azul-bulbe);
+}
+
+.legenda-col--antes strong {
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+/* ---------- Fatura: borda picotada, canto dobrado e código de barras ---------- */
+.fatura {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+  padding: 8px 8px 12px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), 93.75% 100%, 87.5% calc(100% - 6px), 81.25% 100%, 75% calc(100% - 6px), 68.75% 100%, 62.5% calc(100% - 6px), 56.25% 100%, 50% calc(100% - 6px), 43.75% 100%, 37.5% calc(100% - 6px), 31.25% 100%, 25% calc(100% - 6px), 18.75% 100%, 12.5% calc(100% - 6px), 6.25% 100%, 0 calc(100% - 6px));
+}
+
+.fatura::after {               /* canto dobrado */
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(225deg, var(--fundo-ilustra) 50%, rgba(0, 0, 0, 0.18) 50%);
+}
+
+.fatura__rotulo {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.fatura__empresa {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.fatura__logo {
+  display: block;
+  height: 19px;
+  width: auto;
+  margin: 2px 0;
+}
+
+.fatura__valor {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.codigo {
+  align-self: stretch;
+  height: 14px;
+  margin-top: auto;
+  background: repeating-linear-gradient(90deg, currentColor 0 2px, transparent 2px 4px, currentColor 4px 5px, transparent 5px 8px);
+  opacity: 0.45;
+}
+
+.fatura--antes {
+  height: 230px;
+  background: var(--papel-antes);
+  color: var(--texto-suave);
+  gap: 6px;
+}
+
+.fatura--antes .raio {
+  margin-top: 48px;
+}
+
+.pilha {
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+}
+
+.economia-pedaco {
+  flex: 0 0 24px;
+  margin-bottom: 4px;
+  border: 2px dashed var(--verde-tracejado);
+  border-radius: 6px;
+  background: var(--verde-suave);
+  color: var(--verde-texto);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.fatura--bulbe {
+  flex: 0 0 142px;
+  background: var(--azul-bulbe);
+  color: #FFFFFF;
+  gap: 4px;
+}
+
+.fatura--bulbe .sol {
+  margin: 2px 0;
+}
+
+.fatura--cemig {
+  flex: 0 0 52px;
+  margin-top: 8px;             /* espaço: são dois papéis diferentes */
+  background: var(--papel-cemig);
+  color: #17305a;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.fatura__linha {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.fatura__linha b {
+  font-weight: 800;
+}
+
+.resultado {
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: var(--verde-suave);
+  color: var(--verde-texto);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.resultado strong {
+  font-size: 1rem;
+}
+
+/* ---------- Card do titular ---------- */
+.card-titular {
+  background: #DDF3E6;          /* um tom acima do verde da economia (#E9F8EF), para não se confundirem */
+  border: 1px solid #6FCB9A;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-titular h2 {
+  font-size: 0.95rem;
+  color: var(--azul-bulbe);
+}
+
+.card-titular p {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--texto-suave);
+}
+
+/* Botão do WhatsApp: verde médio com "degrau" embaixo (parece apertável),
+   mais escuro que o fundo do card e mais leve que o "Continuar" azul. */
+.botao--whatsapp-suave {
+  min-height: 46px;
+  padding: 0 12px;
+  background: #7ccda3;
+  color: #064E3B;
+  font-size: 0.84rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 2px 0 #3f9e6f;
+}
+
+.botao--whatsapp-suave:hover {
+  background: #6bc497;
+}
