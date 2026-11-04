@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Pedido enviado · Bulbe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body data-tela="enviado">
+
+  <div class="app app--adesao">
+
+    <header class="cabecalho">
+
+      <div class="barra-status">
+        <span>10:12</span>
+        <div class="status-icones">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true">
+            <rect x="0" y="8" width="3" height="4" rx="1"/>
+            <rect x="5" y="5" width="3" height="7" rx="1"/>
+            <rect x="10" y="2.5" width="3" height="9.5" rx="1"/>
+            <rect x="15" y="0" width="3" height="12" rx="1"/>
+          </svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none" aria-hidden="true">
+            <rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor"/>
+            <rect x="2.5" y="2.5" width="16" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="22" y="4" width="2" height="4" rx="1" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="barra-topo">
+        <span></span>
+        <img class="logo-img" src="img/logo-bulbe-branca.png" alt="Bulbe" width="100" height="29">
+        <span class="etapa" aria-label="Etapa 2/2">2/2</span>
+      </div>
+
+      <div class="progresso" role="progressbar" aria-label="Progresso do pedido" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
+        <div class="progresso__barra" style="width: 100%"></div>
+      </div>
+
+    </header>
+
+    <main class="conteudo" id="conteudo">
+
+      <div class="selo-sucesso" aria-hidden="true">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+
+      <div class="centro">
+        <h1 class="titulo">Pedido enviado</h1>
+        <p class="subtitulo">Seu contrato continua ativo. Você não cancelou nada.</p>
+      </div>
+
+      <dl class="resumo">
+        <dt>Novo endereço</dt>
+        <dd id="resumo-endereco">Rua das Acácias, 120, Contagem</dd>
+        <dt>Conta de luz</dt>
+        <dd id="resumo-conta">Arquivo anexado</dd>
+      </dl>
+
+      <ol class="passos" aria-labelledby="titulo-proximos">
+        <li class="passos__titulo" id="titulo-proximos" style="list-style: none">O que acontece agora</li>
+        <li class="passo passo--feito"><span class="passo__numero" aria-hidden="true">✓</span><span>Recebemos o novo endereço e a conta de luz.</span></li>
+        <li class="passo"><span class="passo__numero" aria-hidden="true">2</span><span>A Bulbe <strong>confirma</strong> se o novo endereço pode receber a economia.</span></li>
+        <li class="passo"><span class="passo__numero" aria-hidden="true">3</span><span>Após a qualificação, sua economia volta à fatura. A Bulbe informa o prazo quando confirmar o novo endereço.</span></li>
+      </ol>
+
+
+    </main>
+
+    <footer class="rodape rodape--acao">
+      <a class="botao botao--primario" href="index.html">Voltar ao início</a>
+    </footer>
+
+  </div>
+
+  <script>
+    function ajustarAltura() {
+      document.documentElement.style.setProperty("--altura-app", window.innerHeight + "px");
+    }
+
+    ajustarAltura();
+    window.addEventListener("resize", ajustarAltura);
+    window.addEventListener("orientationchange", ajustarAltura);
+  </script>
+
+</body>
+</html>

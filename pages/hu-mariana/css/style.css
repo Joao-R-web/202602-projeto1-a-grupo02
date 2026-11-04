@@ -1,0 +1,794 @@
+/* =========================================================
+   HU da Mariana: Explicar e facilitar a mudança de endereço
+   Telas nesta pasta: index.html (FAQ) → mudanca-endereco.html → novo-endereco.html → pedido-enviado.html
+
+   Parte 1: base do template do grupo (mesmo CSS de pages/exemplo.html:
+            fonte Poppins, azul #08068D e app 360 x 812).
+   Parte 2: variante de adesão (cabeçalho azul, rodapé de ação)
+            e componentes das quatro telas.
+   ========================================================= */
+
+/* ---------- Parte 1 · Base do template ---------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --azul-bulbe: #08068D;        
+  --azul-claro: #8a9bb5;        
+  --borda: #dde3ec;             
+  --texto-suave: #5b6b82;       
+  --vermelho: #d93a2f;          
+  --fundo-pagina: #ececec;
+  --altura-app: 100dvh;         
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: var(--altura-app);
+  background-color: var(--fundo-pagina);
+  font-family: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--azul-bulbe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: min(360px, 100vw);
+  height: min(812px, 96vh);
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (pointer: coarse), (max-width: 600px) {
+  body {
+    display: block;
+    background: #ffffff;
+  }
+
+  .app {
+    width: 100%;
+    height: var(--altura-app);
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+.cabecalho {
+  flex: 0 0 auto;
+  padding: env(safe-area-inset-top) 16px 12px;
+}
+
+.barra-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+  padding: 0 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-icones {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.barra-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0 14px;
+}
+
+.botao-icone {
+  background: none;
+  border: none;
+  color: var(--azul-bulbe);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.acoes-direita {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.indicador {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background-color: var(--vermelho);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--azul-bulbe);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conteudo {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 16px;
+}
+
+.rodape {
+  flex: 0 0 auto;
+  background-color: #ffffff;
+}
+
+.navegacao {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--borda);
+}
+
+.nav-item {
+  flex: 1;
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: var(--azul-claro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.nav-item.ativo {
+  color: var(--azul-bulbe);
+  font-weight: 600;
+}
+
+@media (max-height: 520px) {
+  .barra-status { height: 24px; }
+  .barra-topo { margin: 4px 0 8px; }
+}
+
+/* ---------- Parte 2 · Adesão e telas da HU ---------- */
+/* =========================================================
+   Variação do template para quem AINDA NÃO É CLIENTE (adesão)
+   Uso: <div class="app app--adesao">
+   - Cabeçalho: voltar + logo + etapa (sem sino e sem perfil)
+   - Rodapé: botão de ação da etapa (sem as abas do app logado)
+   Usa só as variáveis do template.css; as novas estão abaixo.
+   ========================================================= */
+
+:root {
+  --verde: #23C97B;
+  --verde-escuro: #0B3D25;
+  --verde-fundo: #F0FDF4;
+  --verde-borda: #86E0B3;
+  --info-fundo: #E6F0FB;
+  --info-texto: #1D4E89;
+  --whatsapp: #075E54;
+  --whatsapp-chat: #ECE5DD;
+  --whatsapp-balao: #DCF8C6;
+  --desabilitado: #A4B3C1;
+  --raio: 10px;
+  --altura-botao: 48px;
+}
+
+/* ---------- Cabeçalho da adesão ---------- */
+/* Azul da marca com o logo branco, como no app da Bulbe.
+   Se o PR oficial deixar o cabeçalho do template azul, este bloco vira redundante. */
+
+.app--adesao .cabecalho {
+  background: var(--azul-bulbe);
+  color: #FFFFFF;
+}
+
+.app--adesao .botao-icone {
+  color: #FFFFFF;
+}
+
+.app--adesao .botao-icone:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.logo-img {
+  justify-self: center;
+  display: block;
+  height: 29px;
+  width: auto;
+}
+
+.app--adesao .barra-topo {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  margin: 4px 0 10px;
+}
+
+.app--adesao .botao-icone {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.etapa {
+  justify-self: end;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.progresso {
+  height: 4px;
+  margin: 0 -16px -12px;   /* encosta nas bordas do app, por baixo do cabeçalho */
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.progresso__barra {
+  height: 100%;
+  background: linear-gradient(90deg, var(--verde), #19A39B);
+}
+
+/* ---------- Conteúdo ---------- */
+
+.app--adesao .conteudo {
+  padding: 20px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Os blocos não encolhem: quando não cabem, a área de conteúdo rola (overflow do template). */
+.app--adesao .conteudo > * {
+  flex-shrink: 0;
+}
+
+.titulo {                      /* tipografia de título da Bulbe: Poppins SemiBold 24/32 */
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--azul-bulbe);
+}
+
+.subtitulo {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+/* ---------- Rodapé de ação (no lugar das abas) ---------- */
+
+.rodape--acao {
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--borda);
+}
+
+/* ---------- Botões ---------- */
+
+.botao {
+  width: 100%;
+  min-height: var(--altura-botao);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--raio);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao--primario {
+  background: var(--azul-bulbe);
+  color: #FFFFFF;
+}
+
+.botao--primario:disabled {
+  background: var(--desabilitado);
+  cursor: not-allowed;
+}
+
+.botao--whatsapp {
+  background: var(--whatsapp);
+  color: #FFFFFF;
+  font-size: 0.95rem;
+}
+
+.botao:focus-visible,
+.botao-icone:focus-visible {
+  outline: 3px solid #3D6BF2;
+  outline-offset: 2px;
+}
+
+/* ---------- Formulário ---------- */
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+legend {
+  margin-bottom: 16px;   /* espaço para o rótulo do campo, que fica sobre a borda */
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--azul-bulbe);
+}
+
+.legenda-marcada {
+  padding-left: 10px;
+  border-left: 3px solid var(--verde);
+}
+
+.obrigatorio {
+  color: var(--vermelho);
+}
+
+/* Abas "Para mim / Para outra pessoa": um trilho cinza com as duas opções.
+   A marcada fica preenchida no azul da marca, com ✓ (padrão do "Sim/Não" da Bulbe).
+   A não marcada não tem borda, para não parecer um campo de digitação. */
+.segmentado {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: #EEF1F6;
+}
+
+.segmentado input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.segmentado label {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 6px;
+  border-radius: 9px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;   /* "✓ Para outra pessoa" cabe numa linha mesmo em 360 px */
+  color: var(--texto-suave);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.segmentado label:hover {
+  color: var(--azul-bulbe);
+}
+
+.segmentado .icone-check {
+  display: none;
+}
+
+.segmentado input:checked + label {
+  background: var(--azul-bulbe);
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(8, 6, 141, 0.3);
+}
+
+.segmentado input:checked + label .icone-check {
+  display: block;
+}
+
+.segmentado input:focus-visible + label {
+  outline: 3px solid #3D6BF2;
+  outline-offset: 2px;
+}
+
+.campo {
+  position: relative;
+}
+
+.campo label {
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  padding: 0 4px;
+  background: #FFFFFF;
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+}
+
+.campo input {
+  width: 100%;
+  height: var(--altura-botao);
+  padding: 0 12px;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--azul-bulbe);
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: var(--azul-bulbe);
+  box-shadow: 0 0 0 3px rgba(8, 6, 141, 0.15);
+}
+
+/* Campo de WhatsApp: ícone do WhatsApp dentro do campo, à esquerda do número */
+.campo--whatsapp .campo__icone {
+  position: absolute;
+  top: 14px;          /* (48px de altura do campo - 20px do ícone) / 2 */
+  left: 12px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.campo--whatsapp input {
+  padding-left: 42px;
+}
+
+.campo input[aria-invalid="true"] {
+  border-color: var(--vermelho);
+}
+
+.campo__erro {
+  margin: 4px 0 0 4px;
+  font-size: 0.75rem;
+  color: #B42318;
+}
+
+.aviso {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--raio);
+  background: var(--info-fundo);
+  color: var(--info-texto);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.termos {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+.termos a,
+.subtitulo a,
+.link-secundario {
+  color: var(--azul-bulbe);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Texto só para leitores de tela (o resumo da ilustração em palavras) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Perguntas frequentes (index.html) ---------- */
+
+.faq {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--borda);
+}
+
+.faq__pergunta,
+.faq__destaque {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 56px;
+  padding: 12px 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--texto-suave);
+  cursor: pointer;
+}
+
+.faq__mais {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid var(--azul-claro);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--azul-claro);
+}
+
+/* Pergunta nova, com destaque: leva para a tela da HU */
+.faq__destaque {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 2px solid #1D5FD1;
+  border-radius: 12px;
+  background: var(--info-fundo);
+  color: var(--azul-bulbe);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.faq__destaque .faq__mais {
+  border-color: #1D5FD1;
+  color: #1D5FD1;
+}
+
+.faq__destaque-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.selo-novo {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--verde);
+  color: var(--verde-escuro);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.faq__destaque:focus-visible {
+  outline: 3px solid #3D6BF2;
+  outline-offset: 2px;
+}
+
+.card-seguro {
+  padding: 14px;
+  border: 1px solid var(--verde-borda);
+  border-radius: 12px;
+  background: var(--verde-fundo);
+  color: var(--verde-escuro);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.card-seguro strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+/* ---------- Mudar de endereço (mudanca-endereco.html) ---------- */
+
+.resposta-destaque {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--azul-bulbe);
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.resposta-destaque svg {
+  flex: 0 0 auto;
+}
+
+.texto-apoio {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}
+
+.passos {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+}
+
+.passos__titulo {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.passo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.passo__numero {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--verde-escuro);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.botao--contorno {
+  background: #FFFFFF;
+  border: 2px solid var(--whatsapp);
+  color: var(--whatsapp);
+}
+
+.botao--contorno:hover {
+  background: var(--verde-fundo);
+}
+
+.nota-final {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+}
+
+.status-simulado {
+  padding: 10px 12px;
+  border-radius: var(--raio);
+  background: var(--info-fundo);
+  color: var(--info-texto);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+/* ---------- Novo endereço (novo-endereco.html) ---------- */
+
+.campo__ajuda {
+  margin: 4px 0 0 4px;
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+}
+
+.campo--arquivo input[type="file"] {
+  height: auto;
+  padding: 12px;
+  font-size: 0.85rem;
+}
+
+.campo--arquivo input[type="file"]::file-selector-button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border: 1px solid var(--azul-bulbe);
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: var(--azul-bulbe);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.linha-dupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ---------- Pedido enviado (pedido-enviado.html) ---------- */
+
+.selo-sucesso {
+  align-self: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--verde-escuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centro {
+  text-align: center;
+}
+
+.resumo {
+  padding: 14px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.resumo dt {
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+}
+
+.resumo dd + dt {
+  margin-top: 8px;
+}
+
+.passo--feito .passo__numero {
+  background: var(--azul-bulbe);
+  color: #FFFFFF;
+}
+
+.campo input::placeholder {
+  color: #A4B3C1;
+}
+
+/* Perguntas antigas: só texto, sem ação (a pergunta nova é a única que leva a outra tela) */
+.faq__pergunta {
+  cursor: default;
+}
