@@ -1,0 +1,355 @@
+/* =====================================================
+   CSS PRÓPRIO DA TELA "COMO FUNCIONA A BULBE"
+   Tudo fica dentro de .funciona para não mexer nas outras telas.
+   ===================================================== */
+
+.funciona {
+  --f-azul: #08068D;
+  --f-borda: #E2E1F0;
+  --f-texto-suave: #62627A;
+  --f-verde: #159B72;
+  --f-verde-botao: #22C67F;
+  --f-verde-claro: #E5F7F0;
+  --f-fundo-card: #F5F5FA;
+
+  color: var(--f-azul);
+}
+
+/* CARD AZUL */
+
+.funciona .card-azul {
+  background-color: var(--f-azul);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.funciona .card-azul h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.funciona .card-azul h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #c5d3ea;
+}
+
+/* LISTA DE ETAPAS */
+
+.funciona .lista-etapas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.funciona .lista-etapas li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+/* NÚMEROS DAS ETAPAS */
+
+.funciona .num {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--f-verde);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.funciona .card-azul .num {
+  background-color: #ffffff;
+  color: var(--f-azul);
+}
+
+/* BOTÃO VERDE */
+
+.funciona .botao-verde {
+  margin-top: 4px;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--f-verde-botao);
+  color: var(--f-azul);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.funciona .botao-verde:hover {
+  filter: brightness(0.95);
+}
+
+/* CARROSSEL */
+
+.funciona .secao-carrossel {
+  margin-top: 22px;
+}
+
+.funciona .secao-carrossel > h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+/* FAIXA DO CARROSSEL */
+
+.funciona .carrossel-faixa {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  border-radius: 20px;
+}
+
+.funciona .carrossel-faixa::-webkit-scrollbar {
+  display: none;
+}
+
+/* SLIDES */
+
+.funciona .slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+}
+
+.funciona .slide-card {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid var(--f-borda);
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* IDENTIFICAÇÃO DA ETAPA */
+
+.funciona .slide-etapa {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--f-verde);
+}
+
+.funciona .slide-card h3 {
+  font-size: 1.1rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.funciona .slide-texto {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--f-texto-suave);
+}
+
+/* IMAGENS */
+
+.funciona .slide-imagem {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.funciona .slide-imagem.foco-casa {
+  object-position: 85% center;
+}
+
+/* PASSOS DOS SLIDES */
+
+.funciona .passos {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.funciona .passos li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+/* SELOS */
+
+.funciona .selos {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.funciona .selos li {
+  border: 1px solid var(--f-borda);
+  background-color: var(--f-fundo-card);
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* CONTROLES DO CARROSSEL */
+
+.funciona .carrossel-controles {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.funciona .btn-nav {
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 22px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.funciona .btn-voltar {
+  border: 1.5px solid var(--f-azul);
+  background: #ffffff;
+  color: var(--f-azul);
+}
+
+.funciona .btn-avancar {
+  border: 1.5px solid var(--f-azul);
+  background: var(--f-azul);
+  color: #ffffff;
+}
+
+.funciona .btn-nav:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* INDICADORES */
+
+.funciona .indicadores {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.funciona .ponto {
+  min-width: 22px;
+  height: 44px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.funciona .ponto::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #D5D4E7;
+  transition: width 0.25s, background-color 0.25s;
+}
+
+.funciona .ponto[aria-current="true"]::before {
+  width: 20px;
+  background-color: var(--f-azul);
+}
+
+/* CARD DE SEGURANÇA */
+
+.funciona .seguranca {
+  margin-top: 16px;
+  background-color: var(--f-verde-claro);
+  border: 1px solid #B8E8D4;
+  border-radius: 20px;
+  padding: 14px;
+  color: #11694E;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.funciona .seguranca-topo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.funciona .seguranca-topo strong {
+  flex: 1;
+}
+
+.funciona .selo-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  border: 1px solid #A8DCC6;
+  border-radius: 4px;
+  padding: 2px 6px;
+  background: #ffffff;
+}
+
+.funciona .seguranca p {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.funciona .seguranca a {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+/* FOCO DE TECLADO */
+
+.funciona button:focus-visible,
+.funciona a:focus-visible,
+.funciona .carrossel-faixa:focus-visible {
+  outline: 3px solid var(--f-verde-botao);
+  outline-offset: 2px;
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .funciona .carrossel-faixa {
+    scroll-behavior: auto;
+  }
+
+  .funciona .ponto::before {
+    transition: none;
+  }
+
+}
