@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Bulbe</title>
+
+  <!-- Fonte da Bulbe -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+
+  <!-- CSS comum do grupo -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+
+  <!-- CSS próprio da tela -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JavaScript comum do grupo -->
+  <script type="module" src="../../assets/js/main.js"></script>
+
+  <!-- JavaScript próprio da tela -->
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header class="cabecalho">
+
+      <div class="barra-status">
+        <span>10:12</span>
+
+        <div class="status-icones">
+
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true">
+            <rect x="0" y="8" width="3" height="4" rx="1"/>
+            <rect x="5" y="5" width="3" height="7" rx="1"/>
+            <rect x="10" y="2.5" width="3" height="9.5" rx="1"/>
+            <rect x="15" y="0" width="3" height="12" rx="1"/>
+          </svg>
+
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none" aria-hidden="true">
+            <rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor"/>
+            <rect x="2.5" y="2.5" width="16" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="22" y="4" width="2" height="4" rx="1" fill="currentColor"/>
+          </svg>
+
+        </div>
+      </div>
+
+      <div class="barra-topo">
+
+        <button type="button" class="botao-icone" aria-label="Voltar" onclick="history.back()">
+
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+
+        </button>
+
+        <img class="logo-img" src="../../assets/img/logo-bulbe-branca.png" alt="Bulbe" width="101" height="29">
+
+        <span aria-hidden="true"></span>
+
+      </div>
+
+    </header>
+
+    <main class="conteudo" id="conteudo">
+
+      <div>
+        <h1 class="titulo">Como funciona a Bulbe?</h1>
+
+        <p class="subtitulo">
+          Entenda em poucos passos de onde vem o seu desconto.
+        </p>
+      </div>
+
+      <div class="funciona">
+
+        <section aria-labelledby="titulo-apresentacao">
+
+          <div class="card-azul">
+
+            <h2 id="titulo-apresentacao">De onde vem o desconto?</h2>
+
+            <ol class="lista-etapas">
+
+              <li>
+                <span class="num">1</span>
+
+                <p>
+                  <strong>Produzimos energia limpa</strong>
+                  em nossas usinas espalhadas por Minas Gerais.
+                </p>
+              </li>
+
+              <li>
+                <span class="num">2</span>
+
+                <p>
+                  Essa energia que produzimos é
+                  <strong>injetada na rede da Cemig</strong>
+                  e transformada em créditos de energia.
+                </p>
+              </li>
+
+              <li>
+                <span class="num">3</span>
+
+                <p>
+                  Quando você se conecta à Bulbe,
+                  <strong>passa a usar esses créditos</strong>
+                  e economiza na sua conta de luz.
+                </p>
+              </li>
+
+            </ol>
+
+            <button class="botao-verde" id="ir-carrossel" type="button">
+              Clique aqui para entender mais a fundo como funciona
+            </button>
+
+          </div>
+
+        </section>
+
+        <section class="secao-carrossel" id="carrossel" aria-roledescription="carrossel" aria-label="Como a energia é produzida">
+
+          <h2>Como a energia é produzida?</h2>
+
+          <div class="carrossel-faixa" id="faixa" tabindex="0">
+
+            <!-- SLIDE 1 -->
+
+            <article class="slide" aria-label="Etapa 1 de 4">
+
+              <div class="slide-card">
+
+                <span class="slide-etapa">Etapa 1 de 4</span>
+
+                <h3>Nós geramos energia limpa</h3>
+
+                <p class="slide-texto">
+                  Nossas usinas ficam espalhadas por Minas Gerais.
+                  Sem fumaça e sem queimar nada.
+                </p>
+
+                <img class="slide-imagem"
+                  src="img/usina-solar.png"
+                  alt="Usina solar com placas viradas para o sol">
+
+                <ol class="passos">
+
+                  <li>
+                    <span class="num">1</span>
+
+                    <p>
+                      A usina é um terreno grande, cheio de placas viradas para o sol.
+                    </p>
+                  </li>
+
+                  <li>
+                    <span class="num">2</span>
+
+                    <p>
+                      O sol bate nas placas e
+                      <strong>elas fazem energia.</strong>
+                      Sem fumaça, sem sujeira e sem queimar nada.
+                    </p>
+                  </li>
+
+                </ol>
+
+              </div>
+
+            </article>
+
+            <!-- SLIDE 2 -->
+
+            <article class="slide" aria-label="Etapa 2 de 4">
+
+              <div class="slide-card">
+
+                <span class="slide-etapa">Etapa 2 de 4</span>
+
+                <h3>Ela entra na rede da Cemig e vira crédito</h3>
+
+                <p class="slide-texto">
+                  A energia que geramos é injetada na rede e registrada como créditos.
+                </p>
+
+                <img class="slide-imagem"
+                  src="img/rede-cemig.png"
+                  alt="Usina ligada por fios da rede da Cemig até uma casa">
+
+                <ol class="passos" start="3">
+
+                  <li>
+                    <span class="num">3</span>
+
+                    <p>
+                      A própria usina
+                      <strong>deixa essa energia pronta para usar</strong>,
+                      igual à que chega na sua casa.
+                    </p>
+                  </li>
+
+                </ol>
+
+              </div>
+
+            </article>
+
+            <!-- SLIDE 3 -->
+
+            <article class="slide" aria-label="Etapa 3 de 4">
+
+              <div class="slide-card">
+
+                <span class="slide-etapa">Etapa 3 de 4</span>
+
+                <h3>A Cemig leva até você. Nada muda na sua casa</h3>
+
+                <img class="slide-imagem foco-casa"
+                  src="img/rede-cemig.png"
+                  alt="Casa conectada à rede da Cemig">
+
+                <ol class="passos" start="4">
+
+                  <li>
+                    <span class="num">4</span>
+
+                    <p>
+                      <strong>Essa energia vai para os fios da Cemig</strong>,
+                      os mesmos que levam luz até você.
+                      Você não precisa instalar nada, e nada muda na sua casa.
+                    </p>
+                  </li>
+
+                </ol>
+
+                <ul class="selos">
+
+                  <li>Sem obra e sem placas</li>
+
+                  <li>A Cemig segue como distribuidora</li>
+
+                  <li>Mesma energia, mesma qualidade</li>
+
+                </ul>
+
+              </div>
+
+            </article>
+
+            <!-- SLIDE 4 -->
+
+            <article class="slide" aria-label="Etapa 4 de 4">
+
+              <div class="slide-card">
+
+                <span class="slide-etapa">Etapa 4 de 4</span>
+
+                <h3>Os créditos viram desconto na sua conta de luz</h3>
+
+                <img class="slide-imagem"
+                  src="img/desconto.png"
+                  alt="Casa recebendo energia limpa e desconto na conta de luz">
+
+                <ol class="passos" start="5">
+
+                  <li>
+                    <span class="num">5</span>
+
+                    <p>
+                      Cada energia que a usina manda pros fios
+                      <strong>vira um desconto guardado para você.</strong>
+                      Ele é abatido na sua conta de luz, e por isso ela fica mais barata.
+                    </p>
+                  </li>
+
+                  <li>
+                    <span class="num">6</span>
+
+                    <p>
+                      A energia limpa que chega à sua casa também gera economia.
+                      Com a Bulbe,
+                      <strong>você paga menos na conta de luz!</strong>
+                    </p>
+                  </li>
+
+                </ol>
+
+              </div>
+
+            </article>
+
+          </div>
+
+          <!-- CONTROLES DO CARROSSEL -->
+
+          <div class="carrossel-controles">
+
+            <button class="btn-nav btn-voltar" id="btn-voltar" type="button" aria-label="Etapa anterior">
+              ← Voltar
+            </button>
+
+            <div class="indicadores" id="indicadores"></div>
+
+            <button class="btn-nav btn-avancar" id="btn-avancar" type="button" aria-label="Próxima etapa">
+              Avançar →
+            </button>
+
+          </div>
+
+          <!-- SEGURANÇA -->
+
+          <aside class="seguranca">
+
+            <div class="seguranca-topo">
+
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>
+              </svg>
+
+              <strong>Ambiente 100% seguro</strong>
+
+              <span class="selo-tag">SSL</span>
+
+              <span class="selo-tag">LGPD</span>
+
+            </div>
+
+            <p>
+              Dados criptografados. Você mantém controle total de suas informações.
+            </p>
+
+            <a href="#">Ver política de privacidade</a>
+
+          </aside>
+
+        </section>
+
+      </div>
+
+    </main>
+
+    <!-- RODAPÉ -->
+
+    <footer class="rodape rodape--acao">
+
+      <button type="button" class="botao botao--primario">
+        Quero aderir à Bulbe
+      </button>
+
+    </footer>
+
+  </div>
+
+</body>
+</html>
