@@ -1,0 +1,206 @@
+/* =========================================================
+   Tela: Consumo (home de quem está logado)
+   Só o que é desta tela. O resto vem de assets/css/style.css.
+   ========================================================= */
+
+:root {
+  --con-verde: #23A455;
+  --con-verde-escuro: #1D6B3F;
+  --con-verde-fundo: #E4F3EA;
+  --con-barra-verde: #2E9E5B;
+  --con-barra-cinza: #A9B6D3;
+  --con-cartao: #EEF2F8;
+  --con-texto: #1F2340;
+}
+
+
+/* ---------- Fundo azul atrás do painel arredondado ---------- */
+
+.app--azul {
+  background: var(--azul-bulbe);
+}
+
+
+/* ---------- Painel branco ---------- */
+
+.conteudo--painel {
+  padding: 26px 16px 16px;
+  gap: 16px;
+  border-radius: 24px 24px 0 0;
+  background: #ffffff;
+}
+
+.secao-titulo {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--azul-bulbe);
+}
+
+
+/* ---------- Economia até hoje ---------- */
+
+.economia {
+  padding: 8px 14px 6px;
+  border-left: 4px solid var(--con-verde);
+  border-radius: var(--raio);
+  background: var(--con-verde-fundo);
+}
+
+.economia__rotulo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--con-verde-escuro);
+}
+
+.economia__valor {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--azul-bulbe);
+}
+
+
+/* ---------- Comparativo de consumo ---------- */
+
+.comparativo__item {
+  margin-bottom: 6px;
+}
+
+.comparativo__nome {
+  margin-bottom: 2px;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--texto-suave);
+}
+
+.comparativo__nome--forte {
+  font-weight: 700;
+  color: var(--azul-bulbe);
+}
+
+/* A barra mais comprida (310 kWh) ocupa 100% da largura */
+.barra {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: calc(var(--kwh) / 310 * 100%);
+  min-height: 22px;
+  padding: 0 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  color: #ffffff;
+}
+
+.barra--verde { background: var(--con-barra-verde); }
+.barra--azul  { background: var(--azul-bulbe); }
+.barra--cinza { background: var(--con-barra-cinza); color: var(--azul-bulbe); }
+
+.comparativo__nota {
+  margin-top: 4px;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  color: var(--texto-suave);
+}
+
+
+/* ---------- Botão de contorno ---------- */
+
+.botao--contorno {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border: 2px solid var(--azul-bulbe);
+  border-radius: 12px;
+  background: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  color: var(--azul-bulbe);
+}
+
+.botao--contorno:hover {
+  background: #F1F2FB;
+}
+
+
+/* ---------- Configurações de envio ---------- */
+
+.envios {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+
+.envio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--con-cartao);
+}
+
+.envio__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.envio__nome {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--azul-bulbe);
+}
+
+.envio__detalhe {
+  font-size: 0.7rem;
+  line-height: 1.3;
+  color: var(--texto-suave);
+  overflow-wrap: anywhere;
+}
+
+.envio__detalhe a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.selo-ativo {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--con-barra-verde);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+
+/* ---------- Abas: linha azul na aba ativa ---------- */
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item.ativo::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--azul-bulbe);
+}

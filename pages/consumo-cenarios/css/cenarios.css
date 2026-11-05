@@ -1,0 +1,192 @@
+/* =========================================================
+   Tela: Cenários de consumo
+   Só o que é desta tela. O resto vem de assets/css/style.css.
+   ========================================================= */
+
+:root {
+  /* Cores dos três cenários */
+  --cen-verde-fundo: #E4F3EA;
+  --cen-verde-borda: #23A455;
+  --cen-verde-texto: #1D6B3F;
+
+  --cen-azul-fundo: #E7F0FB;
+  --cen-azul-borda: #2F7BD0;
+  --cen-azul-texto: #1D5A9E;
+
+  --cen-laranja-fundo: #FFF1E3;
+  --cen-laranja-borda: #F28C00;
+  --cen-laranja-texto: #B8620A;
+
+  --cen-texto: #1F2340;
+}
+
+
+/* ---------- Conteúdo ---------- */
+
+.botao-duvidas {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  margin-bottom: -4px;
+  padding: 6px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+  background: #F6F8FB;
+  font: inherit;
+  font-size: 0.7rem;
+  color: var(--cen-texto);
+  cursor: pointer;
+}
+
+.botao-duvidas:focus-visible {
+  outline: 3px solid #3D6BF2;
+  outline-offset: 2px;
+}
+
+.subtitulo--texto {
+  font-size: 0.875rem;
+  line-height: 1.35;
+  color: var(--cen-texto);
+}
+
+
+/* ---------- Cartões dos cenários ---------- */
+
+.cenarios {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cenario {
+  padding: 12px 14px;
+  border-left: 4px solid var(--cen-cor-borda);
+  border-radius: var(--raio);
+  background: var(--cen-cor-fundo);
+}
+
+.cenario--verde {
+  --cen-cor-borda: var(--cen-verde-borda);
+  --cen-cor-fundo: var(--cen-verde-fundo);
+  --cen-cor-texto: var(--cen-verde-texto);
+}
+
+.cenario--azul {
+  --cen-cor-borda: var(--cen-azul-borda);
+  --cen-cor-fundo: var(--cen-azul-fundo);
+  --cen-cor-texto: var(--cen-azul-texto);
+}
+
+.cenario--laranja {
+  --cen-cor-borda: var(--cen-laranja-borda);
+  --cen-cor-fundo: var(--cen-laranja-fundo);
+  --cen-cor-texto: var(--cen-laranja-texto);
+}
+
+.cenario__titulo {
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--cen-cor-texto);
+}
+
+/* Três colunas: desconto, economia, conta com a Bulbe.
+   Os rótulos ficam todos na mesma linha (alinhados embaixo) e os valores
+   na linha seguinte. As colunas podem quebrar texto, então nada sai do cartão. */
+.valores {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr) minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  column-gap: 10px;
+}
+
+.valores > div {
+  display: contents;
+}
+
+.valores dt {
+  align-self: end;
+  margin-bottom: 4px;
+  font-size: 0.55rem;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  color: var(--texto-suave);
+  overflow-wrap: anywhere;
+}
+
+.valores dd {
+  align-self: start;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--cen-texto);
+  overflow-wrap: anywhere;
+}
+
+.valores .valores__destaque {
+  font-size: 1.2rem;
+  line-height: 1.15;
+  color: var(--cen-cor-texto);
+}
+
+.valores__destaque small {
+  font-size: 0.65rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--texto-suave);
+}
+
+.nota-cenarios {
+  margin-top: -8px;
+  font-size: 0.65rem;
+  color: var(--texto-suave);
+}
+
+
+/* ---------- Destaque verde ---------- */
+
+.destaque-verde {
+  padding: 12px 16px;
+  border-left: 4px solid var(--cen-verde-borda);
+  border-radius: var(--raio);
+  background: var(--cen-verde-fundo);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--cen-texto);
+}
+
+.destaque-verde__titulo {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: var(--cen-verde-texto);
+}
+
+
+/* ---------- Botão no fim da tela ---------- */
+
+.botao--fim {
+  margin-top: auto;
+}
+
+
+/* ---------- Abas: linha azul na aba ativa ---------- */
+
+.nav-item {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-item.ativo::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--azul-bulbe);
+}
