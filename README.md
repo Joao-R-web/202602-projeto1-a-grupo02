@@ -35,7 +35,7 @@ Um conjunto de telas do app da Bulbe que explicam, em linguagem simples, o produ
 | Tela | O que faz | História relacionada |
 | --- | --- | --- |
 | Como funciona a Bulbe? | Explica de onde vem o desconto e como a energia é produzida nas usinas solares, com ilustração e linguagem simples | HU01 |
-| Como o desconto é calculado | Texto explicando a conta do desconto, em tela cheia | HU05 |
+| Consumo e Cenários de consumo | Mostra a economia acumulada e compara o consumo com casas similares; os cenários explicam como o desconto muda conforme os créditos de energia do mês | HU05 |
 | Acompanhe suas etapas | Linha do tempo: adesão concluída, aguardar contato, continuar pagando a Cemig, fatura da Bulbe disponível, pagar a Bulbe, rastrear o pagamento e pagamento realizado | HU03 |
 | Entenda suas faturas | Explica a fatura da Cemig e a fatura da Bulbe e responde "por que ainda recebo a fatura da Cemig?", com botão "Entendi a cobrança" | HU04 |
 | Veja como fica a conta de luz | Compara a conta de antes com a de agora (Cemig + Bulbe) e mostra a economia do mês | HU04 |
