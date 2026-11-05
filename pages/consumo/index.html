@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Bulbe | Consumo</title>
+
+  <!-- Fonte da Bulbe -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+
+  <!-- CSS comum do grupo (sempre primeiro) e CSS desta tela -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="css/consumo.css">
+
+  <!-- JavaScript comum do grupo -->
+  <script type="module" src="../../assets/js/main.js"></script>
+</head>
+
+<body>
+
+  <div class="app app--azul">
+
+    <!-- Cabeçalho azul de quem está logado: menu, logo, notificações e perfil -->
+    <header class="cabecalho">
+
+      <div class="barra-status">
+        <span>10:12</span>
+        <div class="status-icones">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true">
+            <rect x="0" y="8" width="3" height="4" rx="1"/>
+            <rect x="5" y="5" width="3" height="7" rx="1"/>
+            <rect x="10" y="2.5" width="3" height="9.5" rx="1"/>
+            <rect x="15" y="0" width="3" height="12" rx="1"/>
+          </svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none" aria-hidden="true">
+            <rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor"/>
+            <rect x="2.5" y="2.5" width="16" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="22" y="4" width="2" height="4" rx="1" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="barra-topo">
+        <button type="button" class="botao-icone" aria-label="Abrir menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"/>
+            <line x1="4" y1="12" x2="20" y2="12"/>
+            <line x1="4" y1="17" x2="20" y2="17"/>
+          </svg>
+        </button>
+
+        <img class="logo-img" src="../../assets/img/logo-bulbe-branca.png" alt="Bulbe" width="101" height="29">
+
+        <div class="acoes-direita">
+          <button type="button" class="botao-icone" aria-label="Notificações">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.7 21a2 2 0 0 1-3.4 0"/>
+            </svg>
+          </button>
+          <!-- Para usar a foto: troque o texto por <img src="..." alt="Perfil"> -->
+          <div class="perfil" aria-label="Perfil">FA</div>
+        </div>
+      </div>
+
+      <!-- Faixa "Indique e ganhe" (a ilustração é um espaço reservado) -->
+      <a class="faixa-indique" href="#">
+        <span class="faixa-indique__imagem" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="6" width="18" height="13" rx="2"/>
+            <path d="M3 8l9 6 9-6"/>
+          </svg>
+        </span>
+        <span class="faixa-indique__chamada">Indique<br>e ganhe</span>
+        <span class="faixa-indique__oferta"><strong>R$ 50</strong> na próxima fatura</span>
+        <svg class="faixa-indique__seta" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 6l6 6-6 6"/>
+        </svg>
+      </a>
+
+      <!-- Escolha da instalação -->
+      <div class="instalacao">
+        <span class="instalacao__rotulo" id="rotulo-instalacao">Instalação:</span>
+        <button type="button" class="instalacao__seletor" aria-labelledby="rotulo-instalacao" aria-haspopup="listbox">
+          3013588579
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4 8h16l-8 10z"/>
+          </svg>
+        </button>
+      </div>
+
+    </header>
+
+    <!-- Painel branco com cantos de cima arredondados -->
+    <main class="conteudo conteudo--painel" id="conteudo">
+
+      <section class="economia" aria-label="Economia até hoje">
+        <p class="economia__rotulo">Até hoje você já economizou:</p>
+        <p class="economia__valor">R$ 29,87</p>
+      </section>
+
+      <section class="comparativo" aria-labelledby="titulo-comparativo">
+        <h2 class="secao-titulo" id="titulo-comparativo">Compare seu consumo</h2>
+
+        <!-- Cada barra: --kwh é o consumo; a barra mais comprida é a Casa média (310) -->
+        <div class="comparativo__item">
+          <p class="comparativo__nome">Casa eficiente</p>
+          <div class="barra barra--verde" style="--kwh: 180">180 kWh</div>
+        </div>
+
+        <div class="comparativo__item">
+          <p class="comparativo__nome comparativo__nome--forte">Sua casa</p>
+          <div class="barra barra--azul" style="--kwh: 249">249 kWh</div>
+        </div>
+
+        <div class="comparativo__item">
+          <p class="comparativo__nome">Casa média</p>
+          <div class="barra barra--cinza" style="--kwh: 310">310 kWh</div>
+        </div>
+
+        <p class="comparativo__nota">Comparamos com casas similares na sua região.</p>
+      </section>
+
+      <a class="botao botao--contorno" href="../consumo-cenarios/index.html">Ver cenários de consumo ›</a>
+
+      <section aria-labelledby="titulo-envio">
+        <h2 class="secao-titulo" id="titulo-envio">Configurações de envio:</h2>
+
+        <ul class="envios">
+          <li class="envio">
+            <span class="envio__nome">Fatura via Bulbe APP</span>
+            <span class="selo-ativo">Ativo</span>
+          </li>
+          <li class="envio">
+            <span class="envio__nome">Fatura via e-mail</span>
+            <span class="selo-ativo">Ativo</span>
+          </li>
+          <li class="envio">
+            <div class="envio__texto">
+              <span class="envio__nome">Fatura via WhatsApp</span>
+              <span class="envio__detalhe">(31) 9••••-••21 · <a href="#">Ver como chega ›</a></span>
+            </div>
+            <span class="selo-ativo">Ativo</span>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- Abas do app (quem está logado). Aba ativa: Consumo -->
+    <footer class="rodape">
+      <nav class="navegacao" aria-label="Navegação principal">
+
+        <button type="button" class="nav-item">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <path d="M14 2v6h6"/>
+            <line x1="9" y1="13" x2="15" y2="13"/>
+            <line x1="9" y1="17" x2="15" y2="17"/>
+          </svg>
+          Faturas
+        </button>
+
+        <button type="button" class="nav-item ativo" aria-current="page">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          Consumo
+        </button>
+
+        <button type="button" class="nav-item">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+          Conexão
+        </button>
+
+        <button type="button" class="nav-item">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <line x1="19" y1="8" x2="19" y2="14"/>
+            <line x1="22" y1="11" x2="16" y2="11"/>
+          </svg>
+          Indicações
+        </button>
+
+      </nav>
+    </footer>
+
+  </div>
+
+</body>
+</html>
