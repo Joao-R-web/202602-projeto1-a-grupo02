@@ -35,17 +35,14 @@ Um conjunto de telas do app da Bulbe que explicam, em linguagem simples, o produ
 | Tela | O que faz | História relacionada |
 | --- | --- | --- |
 | Como funciona a Bulbe? | Explica de onde vem o desconto e como a energia é produzida nas usinas solares, com ilustração e linguagem simples | HU01 |
-| Quem pode ser cliente | Primeira etapa do fluxo de 3 passos: lista os requisitos para contratar e destaca a oferta de desconto | HU01 |
-| Como funciona o desconto | Segunda etapa: compara visualmente quanto o cliente paga com e sem a Bulbe | HU01 |
-| Economia estimada | Terceira etapa: mostra o percentual de economia estimado para o cliente | HU01 |
-| Como o desconto é calculado | Texto explicando a conta do desconto, em tela cheia | HU02 |
-| Acompanhe as etapas | Linha do tempo: adesão concluída, aguardar contato, continuar pagando a Cemig, fatura da Bulbe disponível, pagar a Bulbe, rastrear o pagamento e pagamento realizado | HU01 |
-| Entendendo suas faturas | Explica a fatura da Cemig e a fatura da Bulbe e responde "por que ainda recebo a fatura da Cemig?", com botão "Entenda a cobrança" | HU01 |
-| Seu resumo do mês | Mostra quanto o cliente economizou no mês, os créditos gerados e a composição da conta, com acesso às faturas detalhadas | HU01 |
-| Fatura por WhatsApp | Mensagem com o resumo da fatura e a chave Pix para copiar e pagar | HU01 |
-| Informe seus dados, Veja como fica a conta e Confira a mensagem | Cadastro feito por um familiar: dados do titular e de quem cadastra, uma fatura que vira duas (Cemig + Bulbe) com a economia mensal e a prévia da mensagem enviada ao titular pelo WhatsApp | HU01 |
-| Perguntas frequentes | Respostas em sanfona sobre a Bulbe | HU01 |
-| Mudei de endereço, como faço? | Explica como funciona a mudança, com botões "Pedir transferência" e "Falar no WhatsApp" | HU02 |
+| Como o desconto é calculado | Texto explicando a conta do desconto, em tela cheia | HU05 |
+| Acompanhe suas etapas | Linha do tempo: adesão concluída, aguardar contato, continuar pagando a Cemig, fatura da Bulbe disponível, pagar a Bulbe, rastrear o pagamento e pagamento realizado | HU03 |
+| Entenda suas faturas | Explica a fatura da Cemig e a fatura da Bulbe e responde "por que ainda recebo a fatura da Cemig?", com botão "Entendi a cobrança" | HU04 |
+| Veja como fica a conta de luz | Compara a conta de antes com a de agora (Cemig + Bulbe) e mostra a economia do mês | HU04 |
+| Confira a mensagem | Prévia da mensagem com o resumo das contas do mês, enviada pelo WhatsApp | HU04 |
+| Informe seus dados, Veja como fica a conta e Confira a mensagem | Cadastro feito por um familiar: dados do titular e de quem cadastra, uma fatura que vira duas (Cemig + Bulbe) com a economia mensal e a prévia da mensagem enviada ao titular pelo WhatsApp | HU02 |
+| Perguntas frequentes | Respostas em sanfona sobre a Bulbe | HU06 |
+| Mudei de endereço, como faço? | Explica como funciona a mudança, com botões "Pedir transferência" e "Falar no WhatsApp" | HU06 |
 
 - **Histórias de usuário:** [Elita](docs/historias-elita.md) · [João](docs/historias-joao.md) · [Leandro](docs/historias-leandro.md) · [Pedro](docs/historias-pedro.md) · [Sandro](docs/historias-sandro.md) · [Thiago](docs/historias-thiagopeixotogarcia.md)
 - **Wireframes:** [docs/wireframes/](docs/wireframes/)
@@ -107,12 +104,12 @@ Um conjunto de telas do app da Bulbe que explicam, em linguagem simples, o produ
 
 | Integrante | GitHub | Persona e entrega |
 | --- | --- | --- |
-| Elita Rodrigues | [@elitarodrigues848-cyber](https://github.com/elitarodrigues848-cyber) | Maria: acompanhar as etapas da adesão |
-| João Pedro Roenick | [@Joao-R-web](https://github.com/Joao-R-web) | Carla: tirar dúvidas em um só lugar |
-| Leandro Pacheco | [@lelegatite1227-cmyk](https://github.com/lelegatite1227-cmyk) | Henrique: entender como o desconto é calculado |
-| Pedro Henrique Lima | [@PhLima07](https://github.com/PhLima07) | Mariana: mudar de endereço sem cancelar |
-| Sandro Viglioni | [@SandroVig](https://github.com/SandroVig) | Lucas: entender por que chegam duas faturas |
-| Thiago Peixoto | [@Thiagopeixotog](https://github.com/Thiagopeixotog) | Antônio: explicar as duas contas ao titular |
+| Elita Rodrigues | @elitarodrigues848-cyber | Maria: acompanhar as etapas da adesão |
+| João Pedro Roenick | @Joao-R-web | Carla: entender como a Bulbe funciona |
+| Leandro Pacheco | @lelegatite1227-cmyk | Henrique: conferir o desconto real do mês |
+| Pedro Henrique Lima | @PhLima07 | Mariana: mudar de endereço sem cancelar |
+| Sandro Viglioni | @SandroVig | Lucas: entender por que chegam duas faturas |
+| Thiago Peixoto | @Thiagopeixotog | Antônio: explicar as duas contas ao titular |
 
 ## 9. Entregas
 
