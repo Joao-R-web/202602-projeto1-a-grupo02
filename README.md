@@ -120,7 +120,7 @@ Um conjunto de telas do app da Bulbe que explicam, em linguagem simples, o produ
 | Wireframes | 21–23 | Concluído |
 | Sprint Review I | 24 | Concluído |
 | Implementação | 25–28 | Concluído |
-| Sprint Review II | 29 | Pendente |
+| Sprint Review II | 29 | Concluído |
 | Versão final | 30 | Pendente |
 
 ---
