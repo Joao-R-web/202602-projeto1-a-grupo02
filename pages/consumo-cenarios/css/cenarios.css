@@ -167,9 +167,33 @@
 }
 
 
-/* ---------- Botão no fim da tela ---------- */
+/* ---------- Botão de contorno (mesmo da tela Consumo) ---------- */
 
-.botao--fim {
+.botao--contorno {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border: 2px solid var(--azul-bulbe);
+  border-radius: 12px;
+  background: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  color: var(--azul-bulbe);
+}
+
+.botao--contorno:hover {
+  background: #F1F2FB;
+}
+
+/* Botões do fim da tela: ficam juntos, colados embaixo */
+.botoes-fim {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   margin-top: auto;
 }
 
