@@ -17,7 +17,12 @@ Canais que usa: WhatsApp, Google, e-mail e aplicativo da Bulbe
 
 | Fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
 | --- | --- | --- | --- | --- | --- | --- |
-| Contratação e configuração dos dados | A Maria contrata pelo site e confirma os dados | Site, e-mail, aplicativo ou WhatsApp | "Fiz tudo certo? | Expectativa e insegurança | Não sabe quais são as próximas etapas | Mostrar as etaps do proceso e disponibilizar a confimação de cada etapa. |
+| Descoberta | A Maria conhece a Bulbe por indicação de uma amiga e se interessa em economizar. | Amiga, Google e site da Bulbe | “Será que vou economizar?” | Curiosidade e esperança | Dúvida sobre funcionamento e benefícios | Explicar economia, requisitos e relação com a Cemig |
+| Contratação e configuração dos dados | A Maria contrata pelo site e confirma os dados. | Site, e-mail, aplicativo ou WhatsApp | “Fiz tudo certo?” | Expectativa e insegurança | Não sabe quais são as próximas etapas | Mostrar as etapas do processo e disponibilizar a confirmação de cada etapa |
+| Espera pela conexão | A Maria continua recebendo e pagando a conta da Cemig. | Conta Cemig, e-mail e aplicativo da Bulbe | “Por que ainda pago a Cemig? Quando começo a economizar?” | Ansiedade | Sem status claro e sem previsão da primeira fatura | Exibir status da adesão, previsão e aviso para continuar pagando a Cemig |
+| Chegada da 1ª fatura | A Maria verifica se a fatura da Bulbe já está disponível. | Aplicativo, e-mail e conta de luz | “Qual valor devo pagar? Isso substitui a Cemig?” | Preocupação | Receio de cobrança duplicada e dúvida sobre o processo | Explicar a primeira fatura, os valores e a relação com a Cemig |
+| Pagamento | A Maria confere os valores e realiza o pagamento. | PIX, boleto e aplicativo | “O pagamento foi reconhecido?” | Dúvida e cautela | Não sabe se o pagamento foi confirmado | Atualizar o status do pagamento e enviar confirmação |
+| 2º mês | A Maria compara as contas e acompanha a economia. | Aplicativo, fatura e notificações | “Estou economizando de verdade?” | Tranquilidade | Dificuldade para comparar os valores | Mostrar comparação mensal, economia acumulada e próximas etapas |
 
 ## Oportunidades registradas como Issues
 

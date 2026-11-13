@@ -4,27 +4,28 @@
     "etapas": [
         {
             "titulo": "Cadastro concluído",
-            "descricao": "Cadastro realizado com sucesso.",
+            "descricao": "Cadastro no app realizado com sucesso.",
             "status": "concluido"
         },
+        {
+            "titulo": "Validação da documentação",
+            "descricao": "Seus documentos foram conferidos e validados.",
+            "status": "concluido"
+        },
+        {
+            "titulo": "Integração",
+            "descricao": "A integração foi conclída com sucesso! Você está cada vez mais pertio de aproveitar os benefícios da Bulbe.",
+            "status": "concluido"
+        },
+
         {
             "titulo": "Aguarde a conexão",
-            "descricao": "A espera pode levar até 90 dias.",
-            "status": "concluido"
-        },
-        {
-            "titulo": "Continue pagando a Cemig",
-            "descricao": "Mantenha sua conta em dia durante a espera.",
-            "status": "concluido"
-        },
-        {
-            "titulo": "Fatura da Bulbe disponível",
-            "descricao": "Confira sua fatura e os descontos.",
+            "descricao": "A conexão com a Bulbe está sendo preparada. A espera pode levar até 90 dias.",
             "status": "andamento"
         },
         {
-            "titulo": "Pague sua fatura Bulbe",
-            "descricao": "Consulte o valor e realize o pagamento.",
+            "titulo": "Primeira fatura Bulbe",
+            "descricao": "Primeira fatura da Bulbe estará deisponível em breve.",
             "status": "pendente"
         }
     ]
