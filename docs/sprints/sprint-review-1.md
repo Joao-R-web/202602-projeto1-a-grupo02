@@ -8,6 +8,7 @@
 ---
 
 ## 1. O que foi entregue
+Na Sprint 1, cada integrante trabalhou na sua propria tela mapeou a jornada dela e transformou o principal ponto de dor em telas do app. O resultado são **6 histórias de usuário** com os fluxos feitos no Figma.
 
 - **Dor escolhida:** falta de entendimento do produto. 27,7% dos cancelamentos desde 2022 vêm daí, o maior motivo de churn da Bulbe (fonte: apresentação institucional da Bulbe Energia, setembro de 2026, slide 23).
 - **Personas:** de seis personas (Maria, Antônio, Carla, Lucas, Henrique, Mariana) reduzimos para duas principais:
@@ -49,7 +50,7 @@ Além das três telas acima, outras telas foram concluídas e commitadas no repo
 
 ## 3. Feedback recebido
 
-- Não teve Feedback de nenhum professor.
+- Não recebemos Feedback de nenhum professor.
 
 ## 4. Próximos passos (Sprint 2)
 
