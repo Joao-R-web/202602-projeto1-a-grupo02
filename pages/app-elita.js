@@ -101,7 +101,7 @@ async function iniciarTela() {
 
                     <p>
                         Em breve sua primeira fatura da Bulbe estará disponível,
-                        e você poderá consultar os valores e acompanhar seus descontos.
+                        e você poderá consultar os valores e acompanhar seus descontos. Enquato isso, continue pagando a Cemig.
                     </p>
 
                 </div>
