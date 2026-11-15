@@ -63,6 +63,65 @@
 }
 
 
+/* ---------- Créditos na conta ---------- */
+
+.creditos-conta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 14px 8px;
+  border-left: 4px solid #2F7BD0;
+  border-radius: var(--raio);
+  background: #E7F0FB;
+  text-decoration: none;
+  color: var(--azul-bulbe);
+}
+
+.creditos-conta__texto {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.creditos-conta__rotulo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1D5A9E;
+}
+
+.creditos-conta__valor {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.creditos-conta__valor small {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.creditos-conta__detalhe {
+  font-size: 0.7rem;
+  line-height: 1.3;
+  color: var(--texto-suave);
+}
+
+.creditos-conta__seta {
+  flex-shrink: 0;
+}
+
+.creditos-conta:hover {
+  background: #DCE9F8;
+}
+
+.creditos-conta:focus-visible {
+  outline: 3px solid #3D6BF2;
+  outline-offset: 2px;
+}
+
+
 /* ---------- Comparativo de consumo ---------- */
 
 .comparativo__item {
@@ -110,6 +169,12 @@
 
 
 /* ---------- Botão de contorno ---------- */
+
+.botoes-ver {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
 .botao--contorno {
   display: flex;

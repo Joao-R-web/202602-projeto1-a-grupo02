@@ -1,0 +1,209 @@
+/* =========================================================
+   Tela: Créditos do mês
+   Só o que é desta tela. O resto vem de assets/css/style.css.
+   ========================================================= */
+
+:root {
+  --cre-verde: #23A455;
+  --cre-verde-escuro: #1D6B3F;
+  --cre-verde-fundo: #E4F3EA;
+  --cre-cartao: #EEF2F8;
+  --cre-texto: #1F2340;
+}
+
+
+/* ---------- Destaque: créditos injetados ---------- */
+
+.creditos {
+  padding: 20px 16px 16px;
+  border-left: 4px solid var(--cre-verde);
+  border-radius: var(--raio);
+  background: var(--cre-verde-fundo);
+  text-align: center;
+}
+
+.creditos__rotulo {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--cre-verde-escuro);
+}
+
+.creditos__valor {
+  margin-top: 4px;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--azul-bulbe);
+}
+
+.creditos__unidade {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.creditos__detalhe {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--cre-texto);
+}
+
+
+/* ---------- Sinal positivo ---------- */
+
+.sinal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.sinal svg {
+  flex-shrink: 0;
+  box-sizing: content-box;
+  padding: 6px;
+  border-radius: 50%;
+  background: var(--cre-verde);
+  color: #ffffff;
+}
+
+.sinal small {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--texto-suave);
+}
+
+.sinal--positivo {
+  color: var(--cre-verde-escuro);
+}
+
+
+/* ---------- Cálculo do mês ---------- */
+
+.calculo {
+  padding: 16px 14px;
+  border-radius: var(--raio);
+  background: var(--cre-cartao);
+}
+
+.calculo__titulo {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--azul-bulbe);
+}
+
+.calculo__linhas {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculo__linha {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--borda);
+  font-size: 0.85rem;
+  line-height: 1.3;
+  color: var(--cre-texto);
+}
+
+.calculo__linha dd {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.calculo__linha small {
+  font-size: 0.7rem;
+  color: var(--texto-suave);
+}
+
+.calculo__linha--conta dt {
+  color: var(--texto-suave);
+}
+
+.calculo__economia {
+  color: var(--cre-verde-escuro);
+}
+
+.calculo__linha--total {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.calculo__linha--total dt {
+  font-weight: 700;
+  color: var(--azul-bulbe);
+}
+
+.calculo__linha--total dd {
+  font-size: 1.2rem;
+  color: var(--azul-bulbe);
+}
+
+.nota-creditos {
+  margin-top: -8px;
+  font-size: 0.65rem;
+  color: var(--texto-suave);
+}
+
+
+/* ---------- Botão de contorno (mesmo da tela Consumo) ---------- */
+
+.botao--contorno {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border: 2px solid var(--azul-bulbe);
+  border-radius: 12px;
+  background: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  color: var(--azul-bulbe);
+}
+
+.botao--contorno:hover {
+  background: #F1F2FB;
+}
+
+/* Botões do fim da tela: ficam juntos, colados embaixo */
+.botoes-fim {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+
+/* ---------- Abas: linha azul na aba ativa ---------- */
+
+.nav-item {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-item.ativo::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--azul-bulbe);
+}

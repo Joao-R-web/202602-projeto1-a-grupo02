@@ -75,6 +75,18 @@
         <p class="economia__valor">R$ 29,87</p>
       </section>
 
+      <!-- Créditos que o cliente tem na conta (leva para a tela de créditos do mês) -->
+      <a class="creditos-conta" href="../consumo-creditos/index.html">
+        <span class="creditos-conta__texto">
+          <span class="creditos-conta__rotulo">Créditos na sua conta</span>
+          <span class="creditos-conta__valor">1.240 <small>kWh</small></span>
+          <span class="creditos-conta__detalhe">215&nbsp;kWh injetados na última fatura</span>
+        </span>
+        <svg class="creditos-conta__seta" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 6l6 6-6 6"/>
+        </svg>
+      </a>
+
       <section class="comparativo" aria-labelledby="titulo-comparativo">
         <h2 class="secao-titulo" id="titulo-comparativo">Compare seu consumo</h2>
 
@@ -97,7 +109,10 @@
         <p class="comparativo__nota">Comparamos com casas similares na sua região.</p>
       </section>
 
-      <a class="botao botao--contorno" href="../consumo-cenarios/index.html">Ver cenários de consumo ›</a>
+      <div class="botoes-ver">
+        <a class="botao botao--contorno" href="../consumo-cenarios/index.html">Ver cenários de consumo ›</a>
+        <a class="botao botao--contorno" href="../consumo-creditos/index.html">Ver créditos e cálculo do mês ›</a>
+      </div>
 
       <section aria-labelledby="titulo-envio">
         <h2 class="secao-titulo" id="titulo-envio">Configurações de envio:</h2>
