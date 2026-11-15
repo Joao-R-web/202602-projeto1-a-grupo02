@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Apresentação final · Squad 02 · Bulbe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<style>
+  /* Layout: palco azul da Bulbe; à esquerda a história de usuário, à direita o celular com a tela real (iframe). */
+  :root {
+    --palco: #08068D;
+    --palco-fundo: #050466;
+    --painel: rgba(255, 255, 255, 0.07);
+    --borda: rgba(255, 255, 255, 0.16);
+    --texto: #ffffff;
+    --texto-suave: rgba(255, 255, 255, 0.72);
+    --verde: #23C97B;
+    --verde-texto: #04301b;
+    --aparelho: #0b0b14;
+    --fonte: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    font-family: var(--fonte);
+    color: var(--texto);
+    background: radial-gradient(120% 90% at 85% 10%, #1b3fd1 0%, var(--palco) 45%, var(--palco-fundo) 100%) fixed, var(--palco);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 16px;
+    overflow-x: hidden;
+  }
+
+  .palco {
+    min-height: calc(100% - 0px);
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 40px;
+    align-items: center;
+  }
+
+  /* ---------- Painel da história ---------- */
+
+  .painel {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+  }
+
+  .marca img { height: 26px; width: auto; }
+
+  .contador {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .painel h1 {
+    margin: 0;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    line-height: 1.2;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  .quem {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .etiqueta {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: var(--painel);
+    border: 1px solid var(--borda);
+  }
+
+  .etiqueta--hu {
+    background: var(--verde);
+    color: var(--verde-texto);
+    border-color: var(--verde);
+  }
+
+  .historia {
+    margin: 0;
+    max-width: 62ch;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .bloco {
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .bloco h2 {
+    margin: 0;
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--verde);
+  }
+
+  /* Telas do fluxo: atalhos que trocam a tela dentro do celular */
+  .telas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .telas button,
+  .controles button,
+  .indice button {
+    font: inherit;
+    color: var(--texto);
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .telas button {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .telas button b {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 0.65rem;
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .telas button[aria-current="true"] {
+    background: #ffffff;
+    color: var(--palco);
+    font-weight: 600;
+  }
+
+  .telas button[aria-current="true"] b {
+    background: var(--verde);
+    color: var(--verde-texto);
+  }
+
+  .dica {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--texto-suave);
+  }
+
+  .controles {
+    display: flex;
+    gap: 8px;
+  }
+
+  .controles button {
+    flex: 1;
+    min-height: 44px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .controles button:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  .indice {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .indice button {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .indice button[aria-current="true"] {
+    background: var(--verde);
+    color: var(--verde-texto);
+    border-color: var(--verde);
+    font-weight: 600;
+  }
+
+  button:hover { filter: brightness(1.15); }
+
+  button:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 2px;
+  }
+
+  /* ---------- Celular ---------- */
+
+  .celular-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .celular {
+    --escala: 1;
+    width: calc(384px * var(--escala));
+    height: calc(836px * var(--escala));
+    position: relative;
+    flex: none;
+  }
+
+  .aparelho {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 384px;
+    height: 836px;
+    padding: 12px;
+    border-radius: 44px;
+    background: var(--aparelho);
+    box-shadow: 0 0 0 2px #2a2a3a, 0 30px 70px rgba(0, 0, 0, 0.5);
+    transform: scale(var(--escala));
+    transform-origin: top left;
+  }
+
+  .tela {
+    width: 360px;
+    height: 812px;
+    border-radius: 32px;
+    overflow: hidden;
+    background: #ffffff;
+    position: relative;
+  }
+
+  .tela iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  /* Tela de aviso (fluxo ainda em desenvolvimento) e capa */
+  .aviso-tela {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    color: var(--palco);
+  }
+
+  .aviso-tela__topo {
+    background: var(--palco);
+    padding: 52px 16px 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .aviso-tela__topo img { height: 29px; width: auto; }
+
+  .aviso-tela__corpo {
+    flex: 1;
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .aviso-tela__corpo strong {
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+
+  .aviso-tela__corpo p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #5b6b82;
+  }
+
+  .selo {
+    align-self: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #FFF4D6;
+    color: #7a5200;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .reiniciar {
+    font: inherit;
+    font-size: 0.78rem;
+    color: var(--texto-suave);
+    background: none;
+    border: 0;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* Capa e encerramento: lista de pessoas */
+  .equipe {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .equipe li {
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  .equipe span {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--texto-suave);
+  }
+
+  .numero {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--verde);
+    line-height: 1;
+  }
+
+  /* Capa e encerramento: o card da dor e a lista da equipe, com espaço entre eles */
+  #extra {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #extra:empty { display: none; }
+
+  [hidden] { display: none !important; }
+
+  @media (max-width: 860px) {
+    .palco {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 24px;
+    }
+    .celular-area { order: -1; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .painel > * { animation: entrar 0.35s ease both; }
+    @keyframes entrar { from { opacity: 0.001; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  }
+  .nota-integracao {
+    margin: 0;
+    padding: 10px 14px;
+    border: 1px dashed rgba(255, 255, 255, 0.45);
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: #DDE3F5;
+  }
+  .nota-integracao b { color: var(--verde); font-weight: 600; }
+  .painel h1.titulo--grande { font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1.05; }
+  .disclaimer { margin: 0; font-size: 0.85rem; color: var(--texto-suave, #C9D3F2); opacity: 0.9; }
+</style>
+</head>
+<body>
+
+
+<main class="palco">
+
+  <section class="painel" aria-live="polite">
+    <div class="marca">
+      <img src="../assets/img/logo-bulbe-branca.png" alt="Bulbe" width="90" height="26">
+      <span>Squad 02 · Projeto Front-End/Ciência de Dados · Ibmec BH</span>
+    </div>
+    <p class="contador" id="contador"></p>
+    <h1 id="titulo"></h1>
+    <div class="quem" id="quem"></div>
+    <p class="historia" id="historia"></p>
+    <div id="extra"></div>
+
+    <div class="bloco" id="bloco-telas">
+      <h2>Telas deste fluxo</h2>
+      <div class="telas" id="telas"></div>
+    </div>
+
+    <p class="nota-integracao" id="integracao" hidden></p>
+
+    <div class="controles">
+      <button type="button" id="anterior">← Anterior</button>
+      <button type="button" id="proximo">Próximo →</button>
+    </div>
+    <nav class="indice" id="indice" aria-label="Slides"></nav>
+  </section>
+
+  <section class="celular-area" aria-label="Tela do app">
+    <div class="celular" id="celular">
+      <div class="aparelho">
+        <div class="tela">
+          <iframe id="app" title="Tela do app da Bulbe" src="about:blank"></iframe>
+          <div class="aviso-tela" id="aviso" hidden>
+            <div class="aviso-tela__topo"><img src="../assets/img/logo-bulbe-branca.png" alt="Bulbe" width="101" height="29"></div>
+            <div class="aviso-tela__corpo" id="aviso-corpo"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="reiniciar" id="reiniciar">Voltar ao início do fluxo</button>
+  </section>
+
+</main>
+
+<script>
+  // ---------- Conteúdo dos slides ----------
+  // A ordem segue a jornada do cliente: descoberta → adesão (Antônio, integrada ao Lucas) → etapas (Maria, integrada ao Henrique) → desconto → mudança.
+  const SLIDES = [
+    {
+      id: 'capa',
+      nome: 'Capa',
+      titulo: 'Guia de Entendimento do Cliente Bulbe · Sprint final',
+      historia: 'Clientes não entendem como a Bulbe funciona nem de onde vem o desconto: 27,7% do churn acontece por falta de compreensão do produto. Cada integrante criou uma persona, mapeou a jornada dela e transformou o principal ponto de dor em telas do app. Na sprint final, as telas foram organizadas na ordem da jornada e algumas foram integradas: Carla, Antônio e Lucas, na adesão, e Maria com Henrique, nas abas do app.',
+      capa: true,
+      aviso: { selo: 'MVP · Sprint final', titulo: 'Apresentação das telas do grupo', texto: 'Da descoberta da Bulbe à mudança de endereço, na ordem da jornada do cliente.' }
+    },
+    {
+      id: 'carla',
+      nome: 'Carla · Como funciona',
+      titulo: 'Entender como a Bulbe funciona',
+      hu: 'HU1', persona: 'Carla Mendes, 38 anos', autor: 'João Pedro Roenick',
+      integrado: 'com o Antônio. “Quero aderir à Bulbe” abre o cadastro dele',
+      historia: 'Como Carla, cliente nova que não entende como a Bulbe funciona, quero ver uma explicação simples de como a energia por assinatura funciona já na página de entrada, para decidir a adesão com confiança.',
+      telas: [['Como funciona a Bulbe?', '../pages/Telas-Jo%C3%A3o/index.html']]
+    },
+    {
+      id: 'antonio',
+      nome: 'Antônio · Duas contas',
+      titulo: 'Explicar as duas contas ao titular',
+      hu: 'HU2', persona: 'Antônio, 63 anos', autor: 'Thiago Peixoto',
+      integrado: 'com a Carla e o Lucas. O cadastro abre pelo “Quero aderir à Bulbe” da Carla, e “Para mim” segue para as telas do Lucas',
+      historia: 'Como familiar que faz a adesão em nome do titular da conta de luz, quero informar que o cadastro é para outra pessoa e enviar a ele pelo WhatsApp uma explicação simples de como fica a conta de luz com a Bulbe, para que ele entenda que a economia vem da Bulbe e reconheça a cobrança como legítima.',
+      telas: [['Informe seus dados', '../pages/hu-antonio/index.html'], ['Veja como fica a conta', '../pages/hu-antonio/como-fica.html'], ['Confira a mensagem', '../pages/hu-antonio/mensagem.html']]
+    },
+    {
+      id: 'lucas',
+      nome: 'Lucas · Duas faturas',
+      titulo: 'Entender as duas faturas e a economia do mês',
+      hu: 'HU4', persona: 'Lucas, 25 anos', autor: 'Sandro Viglioni',
+      integrado: 'com o Antônio. O fluxo começa no “Para mim” da adesão',
+      historia: 'Como Lucas, quero ver de forma clara por que recebo duas faturas (Cemig e Bulbe), com um demonstrativo simples da minha economia, e receber um resumo mensal por WhatsApp, para entender que não pago duas vezes pelo mesmo serviço e não correr o risco de cancelamento.',
+      telas: [['Entenda suas faturas', '../pages/hu-lucas/index.html'], ['Veja como fica a conta', '../pages/hu-lucas/resumo-mes.html'], ['Confira a mensagem', '../pages/hu-lucas/mensagem.html']]
+    },
+    {
+      id: 'maria',
+      nome: 'Maria · Etapas',
+      titulo: 'Acompanhar as etapas da adesão',
+      hu: 'HU3', persona: 'Maria, 35 anos', autor: 'Elita Rodrigues',
+      integrado: 'com o Henrique. A aba Consumo leva às telas dele',
+      historia: 'Como cliente da Bulbe Energia, quero acompanhar as etapas da minha conta de luz, para saber em que fase está o processo e o que preciso fazer em seguida.',
+      telas: [['Acompanhe suas etapas', '../pages/exemplo-elita.html']]
+    },
+    {
+      id: 'henrique',
+      nome: 'Henrique · Desconto real',
+      titulo: 'Conferir o desconto real do mês',
+      hu: 'HU5', persona: 'Henrique, 44 anos', autor: 'Leandro Pacheco',
+      integrado: 'com a Maria. A aba Conexão volta às telas dela',
+      historia: 'Como Henrique, quero ver na fatura o desconto real do mês e o motivo quando for menor que o anunciado, para conferir minha economia sem fazer conta por fora.',
+      telas: [['Consumo', '../pages/consumo/index.html'], ['Cenários de consumo', '../pages/consumo-cenarios/index.html'], ['Créditos do mês', '../pages/consumo-creditos/index.html']]
+    },
+    {
+      id: 'mariana',
+      nome: 'Mariana · Mudança',
+      titulo: 'Mudar de endereço sem cancelar',
+      hu: 'HU6', persona: 'Mariana, 34 anos', autor: 'Pedro Henrique Lima',
+      historia: 'Como cliente da Bulbe que vai mudar de endereço, quero saber o que acontece com meu contrato e pedir a transferência para o novo endereço, para continuar economizando sem cancelar.',
+      telas: [['Perguntas frequentes', '../pages/hu-mariana/index.html'], ['Mudei de endereço', '../pages/hu-mariana/mudanca-endereco.html'], ['Novo endereço', '../pages/hu-mariana/novo-endereco.html'], ['Pedido enviado', '../pages/hu-mariana/pedido-enviado.html']]
+    },
+    {
+      id: 'encerramento',
+      nome: 'Encerramento',
+      titulo: 'Obrigado(a)!',
+      historia: 'Fim da apresentação · Squad 02 · Bulbe Energia',
+      capa: true,
+      semEquipe: true,
+      disclaimer: 'Código, histórias e wireframes no repositório do grupo no GitHub (Joao-R-web/202602-projeto1-a-grupo02).',
+      aviso: { selo: 'Encerramento', titulo: 'Obrigado(a)!', texto: 'Squad 02 · Sprint final' }
+    }
+  ];
+
+  const EQUIPE = [
+    ['Carla', 'João Pedro Roenick'], ['Antônio', 'Thiago Peixoto'], ['Maria', 'Elita Rodrigues'],
+    ['Lucas', 'Sandro Viglioni'], ['Henrique', 'Leandro Pacheco'], ['Mariana', 'Pedro Henrique Lima']
+  ];
+
+  // ---------- Elementos ----------
+  const $ = (id) => document.getElementById(id);
+  const app = $('app');
+  let atual = 0;
+
+  function criar(tag, texto, classe) {
+    const el = document.createElement(tag);
+    if (texto !== undefined) el.textContent = texto;
+    if (classe) el.className = classe;
+    return el;
+  }
+
+  // ---------- Celular: escala para caber na altura da janela ----------
+  function ajustarCelular() {
+    const estreito = window.innerWidth <= 860;
+    const alturaLivre = estreito ? window.innerHeight * 0.8 : window.innerHeight - 70;
+    const larguraLivre = window.innerWidth - 32;
+    const escala = Math.min(1, alturaLivre / 836, larguraLivre / 384);
+    $('celular').style.setProperty('--escala', Math.max(0.5, escala).toFixed(3));
+  }
+
+  // ---------- Telas do fluxo ----------
+  function marcarTelaAtual() {
+    const s = SLIDES[atual];
+    let caminho = '';
+    try { caminho = decodeURIComponent(app.contentWindow.location.pathname); } catch (e) { /* outra origem */ }
+    $('telas').querySelectorAll('button').forEach((b, i) => {
+      const alvo = decodeURIComponent(s.telas[i][1].replace(/^(\.\.\/)+/, ''));
+      b.setAttribute('aria-current', String(caminho.endsWith(alvo)));
+    });
+  }
+
+  // Quando um fluxo integrado leva à tela de outra história, o slide acompanha a tela.
+  function slideDaTela(caminho) {
+    return SLIDES.findIndex((s) => (s.telas || []).some(([, alvo]) =>
+      caminho.endsWith(decodeURIComponent(alvo.replace(/^(\.\.\/)+/, '')))));
+  }
+
+  app.addEventListener('load', () => {
+    let caminho = '';
+    try { caminho = decodeURIComponent(app.contentWindow.location.pathname); } catch (e) { /* outra origem */ }
+    const dono = caminho ? slideDaTela(caminho) : -1;
+    if (dono >= 0 && dono !== atual) mostrar(dono, true);
+    marcarTelaAtual();
+    integrarFluxo();
+  });
+
+  // ---------- Fluxos integrados (só na apresentação) ----------
+  // As telas do repositório continuam independentes. Aqui, na apresentação:
+  // - "Quero aderir à Bulbe" da Carla abre a tela 1 do Antônio (cadastro);
+  // - "Para mim" na tela 1 do Antônio leva às telas do Lucas, e as etapas viram 1/4 a 4/4;
+  // - a aba Consumo da Maria leva às telas do Henrique, e a aba Conexão do Henrique volta à Maria.
+  const TELA_LUCAS = '../pages/hu-lucas/index.html';
+  const TELA_ANTONIO = '../pages/hu-antonio/index.html';
+  const ETAPAS_LUCAS = { 'hu-lucas/index.html': '2/4', 'hu-lucas/resumo-mes.html': '3/4', 'hu-lucas/mensagem.html': '4/4' };
+
+  function integrarFluxo() {
+    if (!SLIDES[atual].integrado) return;
+    let doc, caminho;
+    try {
+      doc = app.contentDocument;
+      caminho = decodeURIComponent(app.contentWindow.location.pathname);
+    } catch (e) { return; }
+    if (!doc) return;
+
+    // Carla (João): o botão "Quero aderir à Bulbe" abre o cadastro (tela 1 do Antônio).
+    if (caminho.includes('Telas-João/')) {
+      doc.querySelectorAll('.rodape .botao--primario, button.botao--primario').forEach((botao) => {
+        if (!/aderir/i.test(botao.textContent)) return;
+        botao.addEventListener('click', (evento) => {
+          evento.preventDefault();
+          abrirTela(TELA_ANTONIO);
+        });
+      });
+      return;
+    }
+
+    // Reforço: se a tela do Antônio seguiu para a tela 2 com "Para mim" marcado,
+    // a apresentação leva para o fluxo do Lucas mesmo assim.
+    if (caminho.endsWith('hu-antonio/como-fica.html')) {
+      let modo = null;
+      try { modo = (JSON.parse(app.contentWindow.sessionStorage.getItem('bulbe-cadastro')) || {}).modo; } catch (e) { /* sem sessão */ }
+      if (modo === 'mim') {
+        try { app.contentWindow.sessionStorage.removeItem('bulbe-cadastro'); } catch (e) { /* ok */ }
+        abrirTela(TELA_LUCAS);
+      }
+      return;
+    }
+
+    if (caminho.endsWith('hu-antonio/index.html') || caminho.endsWith('hu-antonio/')) {
+      const paraMim = doc.getElementById('para-mim');
+      const etapa = doc.querySelector('.etapa');
+      const barra = doc.querySelector('.progresso__barra');
+      const atualizar = () => {
+        if (etapa) etapa.textContent = paraMim.checked ? '1/4' : '1/3';
+        if (barra) barra.style.width = paraMim.checked ? '25%' : '33%';
+      };
+      doc.querySelectorAll('input[name="para-quem"]').forEach((r) => r.addEventListener('change', atualizar));
+      atualizar();
+      // Captura o envio antes do script da tela: "Para mim" segue para o fluxo do Lucas.
+      const seguirParaLucas = (evento) => {
+        if (!paraMim.checked) return;
+        const botao = doc.getElementById('botao-proximo');
+        if (!botao || botao.disabled) return;
+        evento.preventDefault();
+        evento.stopPropagation();
+        abrirTela(TELA_LUCAS);
+      };
+      doc.addEventListener('submit', seguirParaLucas, true);
+      const botaoProximo = doc.getElementById('botao-proximo');
+      if (botaoProximo) botaoProximo.addEventListener('click', seguirParaLucas, true);
+      return;
+    }
+
+    // Telas de quem já está logado (Maria e Henrique): as abas do rodapé ligam uma à outra.
+    const ehMaria = caminho.endsWith('pages/exemplo-elita.html');
+    const ehHenrique = ['consumo/index.html', 'consumo-cenarios/index.html', 'consumo-creditos/index.html'].some((k) => caminho.endsWith('pages/' + k));
+    if (ehMaria || ehHenrique) {
+      const destino = ehMaria
+        ? { aba: 'Consumo', tela: '../pages/consumo/index.html' }
+        : { aba: 'Conexão', tela: '../pages/exemplo-elita.html' };
+      doc.querySelectorAll('.navegacao .nav-item').forEach((item) => {
+        if (item.textContent.trim() !== destino.aba) return;
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', (evento) => {
+          evento.preventDefault();
+          abrirTela(destino.tela);
+        });
+      });
+      return;
+    }
+
+    const chave = Object.keys(ETAPAS_LUCAS).find((k) => caminho.endsWith(k));
+    if (chave) {
+      const etapa = doc.querySelector('.etapa');
+      if (etapa) etapa.textContent = ETAPAS_LUCAS[chave];
+      if (chave === 'hu-lucas/index.html') {
+        const voltar = doc.querySelector('.barra-topo .botao-icone');
+        if (voltar) voltar.setAttribute('href', '../hu-antonio/index.html');
+      }
+    }
+  }
+
+  function abrirTela(caminho) {
+    app.src = caminho;
+  }
+
+  // ---------- Mostrar um slide ----------
+  function mostrar(n, manterTela = false) {
+    atual = Math.max(0, Math.min(SLIDES.length - 1, n));
+    const s = SLIDES[atual];
+
+    $('contador').textContent = `${atual + 1} de ${SLIDES.length}`;
+    $('titulo').textContent = s.titulo;
+    $('titulo').classList.toggle('titulo--grande', s.id === 'encerramento');
+    $('historia').textContent = s.historia;
+
+    // Quem: história, persona e integrante
+    const quem = $('quem');
+    quem.replaceChildren();
+    if (s.hu) {
+      quem.append(criar('span', s.hu, 'etiqueta etiqueta--hu'), criar('span', s.persona, 'etiqueta'), criar('span', s.autor, 'etiqueta'));
+    }
+
+    // Capa e encerramento: equipe em vez de telas e critérios
+    const extra = $('extra');
+    extra.replaceChildren();
+    if (s.disclaimer) {
+      const d = criar('p', s.disclaimer, 'disclaimer');
+      extra.append(d);
+    }
+    if (s.capa && !s.semEquipe) {
+      const lista = criar('ul', undefined, 'equipe');
+      EQUIPE.forEach(([persona, nome]) => {
+        const li = criar('li', nome);
+        li.append(criar('span', `Persona ${persona}`));
+        lista.append(li);
+      });
+      if (s.id === 'capa') {
+        const n = criar('div', undefined, 'bloco');
+        n.append(criar('h2', 'Dor escolhida'));
+        const linha = criar('div');
+        linha.append(criar('span', '27,7%', 'numero'));
+        const p = criar('p', 'do churn da Bulbe acontece por falta de entendimento do produto.', 'dica');
+        p.style.fontSize = '0.85rem';
+        linha.append(p);
+        n.append(linha);
+        extra.append(n);
+      }
+      extra.append(lista);
+    }
+
+    $('bloco-telas').hidden = !s.telas || s.telas.length === 0;
+
+    // Aviso de integração, abaixo das telas
+    const nota = $('integracao');
+    nota.replaceChildren();
+    nota.hidden = !s.integrado;
+    if (s.integrado) nota.append(criar('b', 'Fluxo integrado '), document.createTextNode(s.integrado));
+
+    const telas = $('telas');
+    telas.replaceChildren();
+    (s.telas || []).forEach(([nome, caminho], i) => {
+      const b = criar('button');
+      b.type = 'button';
+      b.append(criar('b', String(i + 1)), document.createTextNode(nome));
+      b.addEventListener('click', () => abrirTela(caminho));
+      telas.append(b);
+    });
+
+    // Celular: tela real ou aviso
+    const temTela = s.telas && s.telas.length > 0;
+    $('aviso').hidden = temTela;
+    $('reiniciar').hidden = !temTela;
+    if (temTela) {
+      if (!manterTela) abrirTela(s.telas[0][1]);
+    } else {
+      app.src = 'about:blank';
+      const corpo = $('aviso-corpo');
+      corpo.replaceChildren(criar('span', s.aviso.selo, 'selo'), criar('strong', s.aviso.titulo), criar('p', s.aviso.texto));
+    }
+
+    $('anterior').disabled = atual === 0;
+    $('proximo').disabled = atual === SLIDES.length - 1;
+    $('indice').querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-current', String(i === atual)));
+
+    // Reinicia a animação de entrada do painel
+    document.querySelectorAll('.painel > *').forEach((el) => { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = ''; });
+
+    if (location.hash.slice(1) !== s.id) history.replaceState(null, '', `#${s.id}`);
+  }
+
+  // ---------- Índice e controles ----------
+  SLIDES.forEach((s, i) => {
+    const b = criar('button', `${i + 1}. ${s.nome}`);
+    b.type = 'button';
+    b.addEventListener('click', () => mostrar(i));
+    $('indice').append(b);
+  });
+
+  $('anterior').addEventListener('click', () => mostrar(atual - 1));
+  $('proximo').addEventListener('click', () => mostrar(atual + 1));
+  $('reiniciar').addEventListener('click', () => {
+    const s = SLIDES[atual];
+    if (s.telas && s.telas.length) abrirTela(s.telas[0][1]);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target.closest && e.target.closest('input, textarea, select')) return;
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') mostrar(atual + 1);
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') mostrar(atual - 1);
+  });
+
+  function slideDoEndereco() {
+    const i = SLIDES.findIndex((s) => s.id === location.hash.slice(1));
+    return i >= 0 ? i : 0;
+  }
+
+  window.addEventListener('hashchange', () => {
+    const i = slideDoEndereco();
+    if (i !== atual) mostrar(i);
+  });
+
+  window.addEventListener('resize', ajustarCelular);
+  ajustarCelular();
+  mostrar(slideDoEndereco());
+</script>
+
+</body>
+</html>
