@@ -15,27 +15,22 @@
   color: var(--f-azul);
 }
 
-/* CARD AZUL */
+/* CARD BRANCO (mesmo estilo dos cards do carrossel) */
 
-.funciona .card-azul {
-  background-color: var(--f-azul);
-  color: #ffffff;
+.funciona .card-branco {
+  background-color: #ffffff;
+  border: 1px solid var(--f-borda);
+  color: var(--f-azul);
   border-radius: 20px;
-  padding: 18px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.funciona .card-azul h2 {
+.funciona .card-branco h2 {
   font-size: 1.1rem;
   font-weight: 800;
-}
-
-.funciona .card-azul h3 {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #c5d3ea;
 }
 
 /* LISTA DE ETAPAS */
@@ -69,11 +64,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.funciona .card-azul .num {
-  background-color: #ffffff;
-  color: var(--f-azul);
 }
 
 /* BOTÃO VERDE */
